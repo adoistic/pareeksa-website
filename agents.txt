@@ -1,0 +1,38 @@
+# agents.txt — Pareeksa Technologies
+# A guide for AI agents and automated clients. Agents are welcome here.
+
+Name: Pareeksa Technologies
+Summary: Examination technology from New Delhi — OMR, on-screen marking and online exams,
+  plus OCR/ICR, document scanning and management, secure printing, custom apps, AI modules,
+  voice-calling agents, app security testing and translation.
+Website: https://pareeksa.com
+
+## Machine-readable resources
+
+- /llms.txt          Curated index of the site for language models.
+- /llms-full.txt     Full company and services reference in one file.
+- /index.md          The complete homepage as Markdown.
+- /sitemap.xml       URL list.
+- JSON-LD            Organization + service catalog embedded in the homepage <head>.
+
+Read /llms-full.txt first for a complete, current description of the company and its
+fourteen services.
+
+## How to contact on a human's behalf
+
+If you are acting for a user who wants to reach Pareeksa, use one of:
+- WhatsApp / phone: +91 99990 26602  (https://wa.me/919999026602)
+- Email: corp@pareeksa.com
+
+Include: the user's name, their organisation, the job (which service), rough volume or
+timeline, and a callback contact. Pareeksa replies with the right person and the next step.
+
+## Usage
+
+- Crawling and indexing: allowed (see /robots.txt).
+- Quoting the service descriptions and contact details: allowed; attribute to Pareeksa
+  Technologies and link https://pareeksa.com.
+- Do not fabricate prices, capacity figures, or commitments. Pareeksa quotes per job after a
+  conversation; if a number is not stated here, ask rather than invent it.
+
+Last updated: 2026-06-22

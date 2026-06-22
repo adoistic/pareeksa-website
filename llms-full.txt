@@ -1,0 +1,81 @@
+# Pareeksa Technologies — full reference
+
+Tagline: The exam, examined.
+Website: https://pareeksa.com
+Email: corp@pareeksa.com
+Phone / WhatsApp: +91 99990 26602
+Office: D-43, Rajapuri Gali No. 12, Uttam Nagar, Bharat Vihar, New Delhi – 110059, South West Delhi, Delhi, India
+GST: 07ECOPS6433P1ZL
+Location served: India
+Languages: English, Hindi
+
+## What Pareeksa is
+
+Pareeksa builds the software that scans, marks and runs examinations — OMR sheets, on-screen
+marking, online tests. Past the exam hall it also handles document capture, custom apps and
+AI work. The name is परीक्षा, Sanskrit for examination; the root pari + iksh means "to see
+thoroughly, to look at a thing from every side." The work is high-stakes, so Pareeksa builds
+for accuracy first, keeps a record of every step, deploys per institution, and stays involved
+after launch.
+
+## Services
+
+Examinations:
+
+1. OMR software & services — Optical mark recognition for answer sheets, surveys and feedback
+   forms. Pareeksa supplies the reading software and runs the scans, from a few thousand
+   sheets to a few hundred thousand. Output is checked data with an audit trail for every sheet.
+
+2. On-screen marking (OSM) — Markers score scanned booklets on screen instead of on paper.
+   The candidate's identity stays hidden (blind marking), so marking stays fair, and a webcam
+   check confirms the right person is doing it (verified marking). Each institution runs its
+   own instance, in its own name.
+
+3. Online examination — On-screen tests from start to finish: question banks, timed papers,
+   randomised sets and live invigilation. Results are ready when the exam closes.
+
+4. Pre & post examination services — Registration, hall tickets, seating and attendance,
+   scanning, tabulation and result processing.
+
+Document intelligence:
+
+5. OCR — Scanned pages and PDFs into searchable, editable text: printed forms, registers,
+   books, ledgers. The model is tuned to the client's documents rather than a generic one.
+
+6. ICR — Hand-printed characters read from filled forms and application boxes. Every field
+   returns a confidence score, so a person checks only what is doubtful.
+
+7. Document scanning — High-volume scanning of files, registers and archives. On-site or
+   ship-in; output is organised digital copies, named and indexed to the client's system.
+
+8. Document management system (DMS) — Store, find and control documents: version history,
+   access by role, full-text search, retention dates. Built around the client's filing logic.
+
+9. Printing — Print work tied to exams and records: question papers under controlled handling,
+   OMR sheets, certificates, mark sheets, variable-data runs. Secure where required.
+
+Software & AI:
+
+10. Custom portal development — Web and mobile apps built to fit the client's process. Admin
+    portals, candidate apps, dashboards. Built and then maintained.
+
+11. AI modules — Task-scoped AI: search across messy archives, research assistants, scripting
+    that clears repetitive work.
+
+12. Agentic AI, voice calling — An AI that takes phone calls and holds a real conversation. It
+    follows the client's flow, answers questions, and books or routes the outcome, and it
+    sounds human.
+
+13. App security testing — Testing apps the way an attacker would, reporting what breaks with
+    steps to reproduce and a fix priority. Web, mobile and the APIs behind them.
+
+Language:
+
+14. Translation — Documents and content moved between languages by people who read both, with
+    the meaning kept intact.
+
+## Contact
+
+To engage Pareeksa, message WhatsApp +91 99990 26602 or email corp@pareeksa.com with the job
+(examinations, documents, an app, or an AI task). Pareeksa replies with who is right for it
+and the next step.

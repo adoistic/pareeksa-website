@@ -1,0 +1,8 @@
+# Pareeksa Technologies — robots.txt
+# All crawlers welcome, including AI/LLM agents.
+# Machine-readable summary for agents: /llms.txt and /agents.txt
+
+User-agent: *
+Allow: /
+
+Sitemap: https://pareeksa.com/sitemap.xml

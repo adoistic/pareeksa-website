@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face{font-family:Geist;src:url(../../fonts/Geist-variable.woff2) format("woff2");font-weight:100 900;font-display:block}
+  @font-face{font-family:"Geist Mono";src:url(../../fonts/GeistMono-variable.woff2) format("woff2");font-weight:100 900;font-display:block}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px}
+  .card{
+    width:1200px;height:630px;background:#1D4ED8;color:#fff;overflow:hidden;position:relative;
+    font-family:Geist,system-ui,sans-serif;padding:72px 80px;
+    display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .nib-bg{position:absolute;right:-110px;top:50%;transform:translateY(-50%);opacity:.09;color:#fff}
+  .row{position:relative;z-index:1}
+  .lock{display:flex;align-items:center;gap:18px}
+  .lock .word{font-weight:600;font-size:42px;letter-spacing:-.02em}
+  .headline{font-weight:600;font-size:98px;line-height:.98;letter-spacing:-.035em;max-width:920px}
+  .meta{margin-top:26px;font-family:"Geist Mono",monospace;font-size:20px;letter-spacing:.005em;color:rgba(255,255,255,.74);font-weight:440;white-space:nowrap}
+  .foot{display:flex;justify-content:space-between;align-items:flex-end}
+  .foot span{font-family:"Geist Mono",monospace;font-size:22px;font-weight:450}
+  .foot .tag{color:rgba(255,255,255,.72)}
+  .foot .url{color:rgba(255,255,255,.92)}
+</style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="nib" viewBox="448 280 1152 1488">
+      <path fill="currentColor" d="M 1070.65 328.425 C 1107.82 342.689 1109.87 370.358 1119.09 404.773 C 1124.88 427.193 1131.17 449.485 1137.93 471.632 C 1158.86 536.275 1184.62 599.253 1214.99 660.032 C 1281.84 791.541 1377.02 921.969 1489.9 1017.78 C 1503.68 1030.02 1523.76 1041.81 1535.28 1055.41 C 1550.67 1073.62 1555.72 1098.41 1548.66 1121.19 C 1543.15 1138.99 1522.01 1166.31 1511.08 1183.56 C 1497.13 1205.93 1483.83 1228.69 1471.19 1251.83 C 1408.52 1366.07 1367.16 1490.78 1349.16 1619.84 C 1344.12 1656.48 1342.81 1683.93 1339.88 1719.96 L 708.518 1719.93 C 696.003 1516.58 637.673 1332.38 523.554 1162.75 C 507.993 1139.62 493.317 1122.24 496.728 1091.96 C 501.662 1048.15 545.063 1033.91 572.219 1005.91 C 722.235 872.725 830.471 696.263 897.771 509.854 C 908.918 478.32 918.812 446.358 927.431 414.041 C 937.524 377.171 937.935 345.895 976.893 328.938 C 978.242 333.249 977.626 368.169 977.615 375.245 L 977.514 479.128 L 977.487 836 C 977.477 901.161 976.744 967.872 977.704 1032.92 C 972.699 1034.83 967.739 1036.86 962.828 1039 C 923.759 1055.86 893.205 1087.86 878.159 1127.66 C 863.396 1166.56 864.658 1209.73 881.667 1247.7 C 912.303 1315.89 992.103 1356.3 1064.85 1334.78 C 1214.7 1290.45 1220.16 1085.64 1070.58 1033.19 C 1069.06 999.571 1070.29 956.216 1070.29 921.653 L 1070.32 704.865 L 1070.25 460.184 C 1070.24 418.19 1069.16 370.117 1070.65 328.425 z"/>
+    </symbol>
+  </svg>
+
+  <div class="card">
+    <svg class="nib-bg" width="588" height="760" aria-hidden="true"><use href="#nib"/></svg>
+    <div class="row lock">
+      <svg width="40" height="52" aria-hidden="true"><use href="#nib"/></svg>
+      <span class="word">Pareeksa</span>
+    </div>
+    <div class="row">
+      <div class="headline">The exam, examined.</div>
+      <div class="meta">OMR &middot; On-screen marking &middot; Online exams &middot; OCR &middot; ICR &middot; DMS &middot; Custom apps &middot; AI</div>
+    </div>
+    <div class="row foot">
+      <span class="tag">Examination technology</span>
+      <span class="url">pareeksa.com</span>
+    </div>
+  </div>
+</body>
+</html>

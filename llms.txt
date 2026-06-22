@@ -1,0 +1,31 @@
+# Pareeksa Technologies
+
+> Examination technology from New Delhi, India. Pareeksa builds the software that scans, marks and runs examinations — OMR, on-screen marking (OSM) and online exams — and handles the work around it: OCR, ICR, document scanning and management, secure printing, custom web and mobile apps, AI modules, voice-calling agents, app security testing and translation. Tagline: "The exam, examined."
+
+Contact: corp@pareeksa.com · WhatsApp/phone +91 99990 26602 · New Delhi – 110059, India · GST 07ECOPS6433P1ZL
+
+## Core — Examinations
+
+- [OMR software & services](https://pareeksa.com/index.md): Optical mark recognition for answer sheets and forms; scanning run as a service, with checked data and a per-sheet audit trail.
+- [On-screen marking (OSM)](https://pareeksa.com/index.md): Score scanned booklets on screen with blind, webcam-verified marking; one instance per institution.
+- [Online examination](https://pareeksa.com/index.md): On-screen tests end to end — question banks, timed papers, randomised sets, live invigilation.
+- [Pre & post examination services](https://pareeksa.com/index.md): Registration, hall tickets, seating, scanning, tabulation and result processing.
+
+## Beyond the exam hall
+
+- [OCR](https://pareeksa.com/index.md): Scanned pages and PDFs into searchable, editable text, tuned to your documents.
+- [ICR](https://pareeksa.com/index.md): Hand-printed form fields read with a confidence score per field.
+- [Document scanning](https://pareeksa.com/index.md): High-volume scanning of files, registers and archives, indexed to your system.
+- [Document management (DMS)](https://pareeksa.com/index.md): Version history, role-based access, full-text search, retention.
+- [Printing](https://pareeksa.com/index.md): Secure exam and record printing — question papers, OMR sheets, certificates, mark sheets.
+- [Custom portals](https://pareeksa.com/index.md): Web and mobile apps built to fit, then maintained.
+- [AI modules](https://pareeksa.com/index.md): Task-scoped AI — archive search, research assistants, automation scripting.
+- [Agentic AI, voice calling](https://pareeksa.com/index.md): An AI that takes phone calls and handles the conversation like a person.
+- [App security testing](https://pareeksa.com/index.md): Attacker's-eye testing of web, mobile and APIs with reproducible findings.
+- [Translation](https://pareeksa.com/index.md): Human translation of documents and content with the meaning kept intact.
+
+## Resources
+
+- [Full site content (Markdown)](https://pareeksa.com/index.md): The complete site as one Markdown document.
+- [llms-full.txt](https://pareeksa.com/llms-full.txt): Full text for language models in one file.
+- [Agent guide](https://pareeksa.com/agents.txt): How automated agents should read and contact Pareeksa.

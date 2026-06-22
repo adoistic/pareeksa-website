@@ -1,7 +1,7 @@
 # Pareeksa Technologies — full reference
 
 Tagline: The exam, examined.
-Website: https://pareeksa.com
+Website: https://adoistic.github.io/pareeksa-website
 Email: corp@pareeksa.com
 Phone / WhatsApp: +91 99990 26602
 Office: D-43, Rajapuri Gali No. 12, Uttam Nagar, Bharat Vihar, New Delhi – 110059, South West Delhi, Delhi, India

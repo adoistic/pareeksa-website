@@ -54,4 +54,4 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://pareeksa.com/sitemap.xml
+Sitemap: https://adoistic.github.io/pareeksa-website/sitemap.xml

@@ -4,7 +4,7 @@
 
 Pareeksa builds the software that scans, marks and runs examinations — OMR sheets, on-screen marking, online tests. Past the exam hall we also handle document capture, custom apps and AI work. Based in New Delhi, India.
 
-- **Website:** https://pareeksa.com
+- **Website:** https://adoistic.github.io/pareeksa-website
 - **Email:** corp@pareeksa.com
 - **Phone / WhatsApp:** +91 99990 26602
 - **Office:** D-43, Rajapuri Gali No. 12, Uttam Nagar, Bharat Vihar, New Delhi – 110059, South West Delhi, Delhi, India

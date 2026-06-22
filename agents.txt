@@ -5,7 +5,7 @@ Name: Pareeksa Technologies
 Summary: Examination technology from New Delhi — OMR, on-screen marking and online exams,
   plus OCR/ICR, document scanning and management, secure printing, custom apps, AI modules,
   voice-calling agents, app security testing and translation.
-Website: https://pareeksa.com
+Website: https://adoistic.github.io/pareeksa-website
 
 ## Machine-readable resources
 
@@ -32,7 +32,7 @@ timeline, and a callback contact. Pareeksa replies with the right person and the
 
 - Crawling and indexing: allowed (see /robots.txt).
 - Quoting the service descriptions and contact details: allowed; attribute to Pareeksa
-  Technologies and link https://pareeksa.com.
+  Technologies and link https://adoistic.github.io/pareeksa-website.
 - Do not fabricate prices, capacity figures, or commitments. Pareeksa quotes per job after a
   conversation; if a number is not stated here, ask rather than invent it.
 

@@ -46,7 +46,7 @@ The same care applied to documents, software and AI — for institutions and com
 
 **09 — Printing.** Print work tied to exams and records: question papers under controlled handling, OMR sheets, certificates, mark sheets, variable-data runs. Secure where it has to be.
 
-### Software & AI
+### Software, AI & language
 
 **10 — Custom portals.** Web and mobile apps built to fit your process, not bent around a framework you will fight later. Admin portals, candidate apps, dashboards. We build, then maintain.
 
@@ -55,8 +55,6 @@ The same care applied to documents, software and AI — for institutions and com
 **12 — Agentic AI, voice calling.** An AI that takes phone calls and holds a real conversation. It follows your flow, answers questions, and books or routes the outcome — and it sounds human.
 
 **13 — App security testing.** We test your app the way an attacker would and report what breaks, with steps to reproduce and a fix priority. Web, mobile, and the APIs behind them.
-
-### Language
 
 **14 — Translation.** Documents and content moved between languages by people who read both, with the meaning kept intact. For when records or material cross a language line.
 

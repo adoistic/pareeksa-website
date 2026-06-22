@@ -54,7 +54,7 @@ Document intelligence:
 9. Printing — Print work tied to exams and records: question papers under controlled handling,
    OMR sheets, certificates, mark sheets, variable-data runs. Secure where required.
 
-Software & AI:
+Software, AI & language:
 
 10. Custom portal development — Web and mobile apps built to fit the client's process. Admin
     portals, candidate apps, dashboards. Built and then maintained.
@@ -68,8 +68,6 @@ Software & AI:
 
 13. App security testing — Testing apps the way an attacker would, reporting what breaks with
     steps to reproduce and a fix priority. Web, mobile and the APIs behind them.
-
-Language:
 
 14. Translation — Documents and content moved between languages by people who read both, with
     the meaning kept intact.

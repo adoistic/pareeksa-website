@@ -56,6 +56,24 @@
     });
   }
 
+  /* ---- Reveal the floating WhatsApp button after the hero ---- */
+  var waFloat = document.querySelector(".wa-float");
+  if (waFloat) {
+    var hero = document.querySelector(".hero");
+    var toggleFloat = function () {
+      var trigger = hero ? hero.offsetHeight * 0.66 : window.innerHeight * 0.7;
+      waFloat.classList.toggle("show", window.scrollY > trigger);
+    };
+    var ticking = false;
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        window.requestAnimationFrame(function () { toggleFloat(); ticking = false; });
+        ticking = true;
+      }
+    }, { passive: true });
+    toggleFloat();
+  }
+
   /* ---- Current year ---- */
   var year = document.getElementById("year");
   if (year) { year.textContent = String(new Date().getFullYear()); }

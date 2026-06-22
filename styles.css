@@ -19,6 +19,16 @@
   font-style: normal;
   font-display: swap;
 }
+/* Devanagari fallback — Geist is Latin-only. Subset to परीक्षा; gated by
+   unicode-range so it loads only when Devanagari is on the page. */
+@font-face {
+  font-family: "Noto Sans Devanagari";
+  src: url("fonts/NotoSansDevanagari-subset.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0900-097F, U+0964-0965, U+200C-200D, U+00A0;
+}
 
 /* ---- Tokens ------------------------------------------------------------- */
 :root {
@@ -96,7 +106,7 @@ html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
-  font-family: "Geist", system-ui, -apple-system, sans-serif;
+  font-family: "Geist", "Noto Sans Devanagari", system-ui, -apple-system, sans-serif;
   font-size: var(--fs-body);
   line-height: 1.6;
   color: var(--ink);

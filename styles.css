@@ -81,11 +81,13 @@
   color-scheme: dark;
 }
 
-/* Larger screens: scale the whole rem system up so 27"+ / 4K feel intentional */
-@media (min-width: 1800px) { :root { --maxw: 1300px; } }
-@media (min-width: 2200px) { :root { font-size: 18px; --maxw: 1460px; } }
-@media (min-width: 3000px) { :root { font-size: 21px; --maxw: 1680px; } }
-@media (min-width: 3600px) { :root { font-size: 24px; --maxw: 1880px; } }
+/* Larger screens: grow the content frame and scale the rem system up so big
+   monitors feel designed-for (more presence), not like a small centered island. */
+@media (min-width: 1600px) { :root { --maxw: 1360px; } }
+@media (min-width: 1920px) { :root { font-size: 17px; --maxw: 1500px; } }
+@media (min-width: 2400px) { :root { font-size: 19px; --maxw: 1680px; } }
+@media (min-width: 3200px) { :root { font-size: 22px; --maxw: 1920px; } }
+@media (min-width: 4400px) { :root { font-size: 26px; --maxw: 2200px; } }
 
 /* ---- Reset -------------------------------------------------------------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -265,6 +267,14 @@ a { color: inherit; text-decoration: none; }
    text goes full-width, so hide it rather than let it sit behind the copy. */
 @media (max-width: 1024px) { .hero-mark { display: none; } }
 
+/* Large monitors: more vertical presence and a slightly more confident nib */
+@media (min-width: 1600px) {
+  .hero-inner { padding-block: clamp(6rem, 3rem + 5vw, 12rem); }
+  .hero-lead { margin-top: 1.8rem; }
+  .hero-mark { height: clamp(720px, 46vw, 1320px); color: rgba(22, 24, 29, 0.055); }
+}
+@media (min-width: 1600px) { [data-theme="dark"] .hero-mark { color: rgba(124, 160, 255, 0.085); } }
+
 .hero-title {
   font-size: var(--fs-h1);
   line-height: 0.98;
@@ -295,11 +305,6 @@ a { color: inherit; text-decoration: none; }
 /* ---- Cards / grids ------------------------------------------------------ */
 .grid { display: grid; gap: clamp(.9rem, .5rem + 1.3vw, 1.5rem); }
 .grid-exam { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-/* auto-fill (not auto-fit) keeps card width consistent across groups and stops
-   a lone last card from stretching to full width. Both capability groups have 5
-   cards, so a 5-up track fills cleanly at common laptop/desktop widths. */
-.grid-cap  { grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); }
-@media (min-width: 2200px) { .grid-cap { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
 
 .card {
   background: var(--surface);
@@ -319,18 +324,40 @@ a { color: inherit; text-decoration: none; }
 .card-lg .card-title { font-size: var(--fs-h3); }
 .card-body { color: var(--muted); margin-top: .6rem; font-size: var(--fs-small); line-height: 1.6; }
 .card-lg .card-body { font-size: var(--fs-body); }
-/* Reserve two lines for compact-card titles so body copy aligns across a row */
-@media (min-width: 560px) { .grid-cap .card-title { min-height: 2.5em; } }
 .hero-lead, .section-lead, .card-body, .prose { text-wrap: pretty; }
 
-.cap-group { margin-top: clamp(2rem, 1.2rem + 2.5vw, 3.5rem); }
-.cap-group:first-of-type { margin-top: 0; }
-.cap-group-title { margin-bottom: 1.1rem; }
-.cap-group-label {
-  font-family: "Geist Mono", monospace; font-size: var(--fs-small); font-weight: 500;
-  color: var(--ink); letter-spacing: .02em; display: inline-flex; align-items: center; gap: .7rem;
+/* Capabilities — editorial: a pinned category aside + a list of icon rows */
+.cap-block { display: grid; grid-template-columns: minmax(0, 21rem) minmax(0, 1fr); gap: clamp(2rem, 1rem + 5vw, 6rem); align-items: start; }
+.cap-block + .cap-block { margin-top: clamp(2.5rem, 1.5rem + 4vw, 5rem); padding-top: clamp(2.5rem, 1.5rem + 4vw, 5rem); border-top: 1px solid var(--hairline); }
+.cap-aside { position: sticky; top: clamp(5rem, 4rem + 3vw, 7.5rem); align-self: start; }
+.cap-aside-tag { display: inline-block; font-family: "Geist Mono", monospace; font-size: var(--fs-caption); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
+.cap-aside-title { font-size: var(--fs-h3); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; margin-top: .9rem; }
+.cap-aside-desc { color: var(--muted); margin-top: 1rem; font-size: var(--fs-small); line-height: 1.6; max-width: 30ch; }
+
+.cap-list { list-style: none; margin: 0; padding: 0; }
+.cap-item { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(1rem, .6rem + 1vw, 1.5rem); padding: clamp(1.2rem, 1rem + .7vw, 1.75rem) 0; border-top: 1px solid var(--hairline); }
+.cap-item:first-child { border-top: 0; padding-top: 0; }
+.cap-icon { width: 46px; height: 46px; flex: none; display: grid; place-items: center; border: 1px solid var(--hairline); border-radius: 11px; color: var(--accent); background: var(--surface); transition: border-color .25s var(--ease), background-color .25s var(--ease), transform .25s var(--ease); }
+.section-alt .cap-icon { background: var(--bg); }
+.cap-icon svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.cap-item-body { max-width: 60ch; min-width: 0; }
+.cap-item-head { display: flex; align-items: baseline; gap: .8rem; }
+.cap-item-head h4 { font-size: var(--fs-h4); font-weight: 600; letter-spacing: -0.015em; line-height: 1.2; }
+.cap-item-num { color: var(--muted); font-size: var(--fs-small); margin-left: auto; }
+.cap-item-body > p { color: var(--muted); margin-top: .45rem; font-size: var(--fs-small); line-height: 1.6; max-width: 56ch; text-wrap: pretty; }
+.cap-item:hover .cap-icon { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--surface)); transform: translateY(-2px); }
+.section-alt .cap-item:hover .cap-icon { background: color-mix(in srgb, var(--accent) 12%, var(--bg)); }
+
+/* line-icon draw-in on scroll (pathLength=1 normalises each shape) */
+.js .cap-item .cap-icon svg [pathLength] { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.cap-item.in .cap-icon svg [pathLength] { animation: cap-draw .9s var(--ease) forwards; }
+@keyframes cap-draw { to { stroke-dashoffset: 0; } }
+
+@media (max-width: 900px) {
+  .cap-block { grid-template-columns: 1fr; gap: 1.4rem; }
+  .cap-aside { position: static; }
+  .cap-aside-desc { max-width: 54ch; }
 }
-.cap-group-label::after { content: ""; display: inline-block; width: clamp(2rem, 6vw, 5rem); height: 1px; background: var(--hairline); }
 
 /* ---- About -------------------------------------------------------------- */
 .about-grid { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(2rem, 1rem + 4vw, 5rem); align-items: start; }
@@ -399,6 +426,7 @@ a { color: inherit; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   .js .reveal { opacity: 1; transform: none; transition: none; }
   .btn, .card, .wa-float, .nav a::after { transition: none !important; }
+  .js .cap-item .cap-icon svg [pathLength] { stroke-dashoffset: 0; animation: none; }
 }
 
 /* ---- Focus -------------------------------------------------------------- */

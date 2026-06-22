@@ -13,6 +13,7 @@ Website: https://pareeksa.com
 - /llms-full.txt     Full company and services reference in one file.
 - /index.md          The complete homepage as Markdown.
 - /sitemap.xml       URL list.
+- /brand.html        Brand guidelines + downloadable logo pack (SVG/PNG/JPG) and brand skill.
 - JSON-LD            Organization + service catalog embedded in the homepage <head>.
 
 Read /llms-full.txt first for a complete, current description of the company and its

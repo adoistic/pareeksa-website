@@ -29,3 +29,4 @@ Contact: corp@pareeksa.com · WhatsApp/phone +91 99990 26602 · New Delhi – 11
 - [Full site content (Markdown)](https://pareeksa.com/index.md): The complete site as one Markdown document.
 - [llms-full.txt](https://pareeksa.com/llms-full.txt): Full text for language models in one file.
 - [Agent guide](https://pareeksa.com/agents.txt): How automated agents should read and contact Pareeksa.
+- [Brand guidelines](https://pareeksa.com/brand.html): Logo, colours, typography and voice, with a downloadable logo pack (SVG/PNG/JPG) and an installable brand skill. Press & brand enquiries: corp@pareeksa.com.

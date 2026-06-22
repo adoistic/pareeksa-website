@@ -74,6 +74,21 @@
     toggleFloat();
   }
 
+  /* ---- Brand page: click a swatch to copy its hex ---- */
+  document.querySelectorAll(".swatch").forEach(function (sw) {
+    sw.addEventListener("click", function () {
+      var hex = sw.getAttribute("data-hex");
+      if (!hex) return;
+      var flash = function () {
+        sw.classList.add("copied");
+        setTimeout(function () { sw.classList.remove("copied"); }, 900);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(hex).then(flash).catch(flash);
+      } else { flash(); }
+    });
+  });
+
   /* ---- Current year ---- */
   var year = document.getElementById("year");
   if (year) { year.textContent = String(new Date().getFullYear()); }

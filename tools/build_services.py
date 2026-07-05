@@ -482,7 +482,6 @@ def header():
     <nav class="nav" aria-label="Primary">
       <a href="index.html#examinations">Examinations</a>
       <a href="index.html#capabilities">Capabilities</a>
-      <a href="index.html#about">About</a>
       <a href="index.html#contact">Contact</a>
     </nav>
     <div class="header-actions">
@@ -502,7 +501,6 @@ def header():
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
     <a href="index.html#examinations">Examinations</a>
     <a href="index.html#capabilities">Capabilities</a>
-    <a href="index.html#about">About</a>
     <a href="index.html#contact">Contact</a>
     <a class="mobile-cta" href="https://wa.me/919999026602" target="_blank" rel="noopener">Message on WhatsApp</a>
   </nav>
@@ -523,7 +521,6 @@ def footer():
       <h2 class="footer-h">Site</h2>
       <a href="index.html#examinations">Examinations</a>
       <a href="index.html#capabilities">Capabilities</a>
-      <a href="index.html#about">About</a>
       <a href="index.html#contact">Contact</a>
       <a href="brand.html">Brand</a>
     </nav>

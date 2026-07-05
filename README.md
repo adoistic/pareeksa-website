@@ -25,7 +25,7 @@ favicon.svg/.ico    App-icon (blue tile + white nib) favicons.
 apple-touch-icon.png 180×180 home-screen icon.
 fonts/              Self-hosted Geist + Geist Mono (variable woff2) + OFL licence.
 assets/             Icons, OG images, brand mark. og/ holds the OG image generators.
-CNAME.txt           The custom-domain value, ready for when you connect the domain.
+CNAME               The custom domain (pareeksa.com) — required by GitHub Pages, no extension.
 .nojekyll           Tells GitHub Pages to serve files as-is (no Jekyll).
 ```
 
@@ -49,17 +49,20 @@ python3 -m http.server 8000
 
 `.nojekyll` is included so every file (including `llms.txt`, `agents.txt`, dotfiles) is served verbatim.
 
-## Connect the custom domain (pareeksa.com) — your step
+## Custom domain (pareeksa.com) — connected
 
-1. In **Settings → Pages → Custom domain**, enter `pareeksa.com` and save. (Or commit a file
-   named `CNAME` — no extension — containing `pareeksa.com`; the value is in `CNAME.txt`.)
-2. At your DNS provider, point the apex domain at GitHub Pages:
-   - Four `A` records → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - (Optional) a `CNAME` for `www` → `<user>.github.io`
-3. Back in Pages, tick **Enforce HTTPS** once the certificate is issued.
+The repo root has a `CNAME` file containing `pareeksa.com`, and Settings → Pages → Custom
+domain is set to match — that side is done. The remaining step is DNS, at whichever
+registrar/DNS provider holds the domain (this project uses Cloudflare):
 
-All canonical, Open Graph and sitemap URLs already use `https://pareeksa.com`, so SEO and
-link previews are correct the moment the domain resolves.
+- Four apex `A` records → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`,
+  `185.199.111.153` (DNS-only / grey-cloud until HTTPS is issued, see below)
+- A `CNAME` for `www` → `adoistic.github.io`
+- Once DNS resolves, tick **Enforce HTTPS** in Settings → Pages (can take up to ~24h to
+  appear after GitHub verifies the domain and issues the certificate)
+
+All canonical, Open Graph, sitemap and llms.txt URLs already use `https://pareeksa.com`, so
+SEO and link previews are correct the moment DNS propagates.
 
 ## Editing
 

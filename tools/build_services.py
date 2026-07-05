@@ -6,7 +6,7 @@ Copy is written in the site's humanised voice (not the PDF's generic corporate p
 import os, re, json
 
 ROOT = "/Users/siraj/Pareeksa Website"
-BASE = "https://adoistic.github.io/pareeksa-website"
+BASE = "https://pareeksa.com"
 I8DIR = os.path.join(ROOT, "assets", "i8")
 I8 = {f[:-4] for f in os.listdir(I8DIR) if f.endswith(".png")}
 

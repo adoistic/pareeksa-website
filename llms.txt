@@ -6,23 +6,23 @@ Contact: corp@pareeksa.com · WhatsApp/phone +91 99990 26602 · New Delhi – 11
 
 ## Core — Examinations
 
-- [OMR software & services](https://adoistic.github.io/pareeksa-website/index.md): Optical mark recognition for answer sheets and forms; scanning run as a service, with checked data and a per-sheet audit trail.
-- [On-screen marking (OSM)](https://adoistic.github.io/pareeksa-website/index.md): Score scanned booklets on screen with blind, webcam-verified marking; one instance per institution.
-- [Online examination](https://adoistic.github.io/pareeksa-website/index.md): On-screen tests end to end — question banks, timed papers, randomised sets, live invigilation.
-- [Pre & post examination services](https://adoistic.github.io/pareeksa-website/index.md): Registration, hall tickets, seating, scanning, tabulation and result processing.
+- [OMR software & services](https://adoistic.github.io/pareeksa-website/omr.html): Optical mark recognition for answer sheets and forms; scanning run as a service, with checked data and a per-sheet audit trail.
+- [On-screen marking (OSM)](https://adoistic.github.io/pareeksa-website/osm.html): Score scanned booklets on screen with blind, webcam-verified marking; one instance per institution.
+- [Online examination](https://adoistic.github.io/pareeksa-website/online-examination.html): On-screen tests end to end — question banks, timed papers, randomised sets, live invigilation.
+- [Pre & post examination services](https://adoistic.github.io/pareeksa-website/pre-post-examination.html): Registration, hall tickets, seating, scanning, tabulation and result processing.
 
 ## Beyond the exam hall
 
-- [OCR](https://adoistic.github.io/pareeksa-website/index.md): Scanned pages and PDFs into searchable, editable text, tuned to your documents.
-- [ICR](https://adoistic.github.io/pareeksa-website/index.md): Hand-printed form fields read with a confidence score per field.
-- [Document scanning](https://adoistic.github.io/pareeksa-website/index.md): High-volume scanning of files, registers and archives, indexed to your system.
-- [Document management (DMS)](https://adoistic.github.io/pareeksa-website/index.md): Version history, role-based access, full-text search, retention.
-- [Printing](https://adoistic.github.io/pareeksa-website/index.md): Secure exam and record printing — question papers, OMR sheets, certificates, mark sheets.
-- [Custom portals](https://adoistic.github.io/pareeksa-website/index.md): Web and mobile apps built to fit, then maintained.
-- [AI modules](https://adoistic.github.io/pareeksa-website/index.md): Task-scoped AI — archive search, research assistants, automation scripting.
-- [Agentic AI, voice calling](https://adoistic.github.io/pareeksa-website/index.md): An AI that takes phone calls and handles the conversation like a person.
-- [App security testing](https://adoistic.github.io/pareeksa-website/index.md): Attacker's-eye testing of web, mobile and APIs with reproducible findings.
-- [Translation](https://adoistic.github.io/pareeksa-website/index.md): Human translation of documents and content with the meaning kept intact.
+- [OCR](https://adoistic.github.io/pareeksa-website/ocr.html): Scanned pages and PDFs into searchable, editable text, tuned to your documents.
+- [ICR](https://adoistic.github.io/pareeksa-website/icr.html): Hand-printed form fields read with a confidence score per field.
+- [Document scanning](https://adoistic.github.io/pareeksa-website/document-scanning.html): High-volume scanning of files, registers and archives, indexed to your system.
+- [Document management (DMS)](https://adoistic.github.io/pareeksa-website/document-management.html): Version history, role-based access, full-text search, retention.
+- [Printing](https://adoistic.github.io/pareeksa-website/printing.html): Secure exam and record printing — question papers, OMR sheets, certificates, mark sheets.
+- [Custom portals](https://adoistic.github.io/pareeksa-website/custom-portals.html): Web and mobile apps built to fit, then maintained.
+- [AI modules](https://adoistic.github.io/pareeksa-website/ai-modules.html): Task-scoped AI — archive search, research assistants, automation scripting.
+- [Agentic AI, voice calling](https://adoistic.github.io/pareeksa-website/agentic-ai.html): An AI that takes phone calls and handles the conversation like a person.
+- [App security testing (Pod Armour)](https://adoistic.github.io/pareeksa-website/app-security.html): Attacker's-eye testing of web, mobile and APIs with reproducible findings, via the Pod Armour platform.
+- [Translation](https://adoistic.github.io/pareeksa-website/translation.html): Human translation of documents and content with the meaning kept intact.
 
 ## Resources
 

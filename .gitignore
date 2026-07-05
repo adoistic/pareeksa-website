@@ -7,3 +7,8 @@ Thumbs.db
 .claude/
 node_modules/
 *.log
+
+# Planning scratch (kept out of the published site)
+task_plan.md
+findings.md
+progress.md

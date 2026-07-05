@@ -56,6 +56,58 @@
     });
   }
 
+  /* ---- Flow diagrams: light up the pipeline when it scrolls into view ---- */
+  var flows = document.querySelectorAll(".flow");
+  if (flows.length) {
+    if (reduce || !("IntersectionObserver" in window)) {
+      flows.forEach(function (f) { f.classList.add("in"); });
+    } else {
+      var fio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            fio.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: "0px 0px -12% 0px", threshold: 0.15 });
+      flows.forEach(function (f) { fio.observe(f); });
+    }
+  }
+
+  /* ---- Pipeline tabs (landing "how it works"): swap the visible flow ---- */
+  var tablist = document.querySelector(".pipe-tabs");
+  if (tablist) {
+    var tabs = Array.prototype.slice.call(tablist.querySelectorAll("[role=tab]"));
+    var panels = Array.prototype.slice.call(document.querySelectorAll(".pipe-panel"));
+    var select = function (idx, focus) {
+      tabs.forEach(function (t, i) {
+        var on = i === idx;
+        t.setAttribute("aria-selected", String(on));
+        t.setAttribute("tabindex", on ? "0" : "-1");
+        if (on && focus) { t.focus(); }
+      });
+      panels.forEach(function (p, i) {
+        p.hidden = i !== idx;
+        if (i === idx) {
+          var flow = p.querySelector(".flow");
+          if (flow) { flow.classList.remove("in"); void flow.offsetWidth; flow.classList.add("in"); }
+        }
+      });
+    };
+    tabs.forEach(function (t, i) {
+      t.addEventListener("click", function () { select(i, false); });
+      t.addEventListener("keydown", function (e) {
+        var n = tabs.length, j = -1;
+        if (e.key === "ArrowRight" || e.key === "ArrowDown") { j = (i + 1) % n; }
+        else if (e.key === "ArrowLeft" || e.key === "ArrowUp") { j = (i - 1 + n) % n; }
+        else if (e.key === "Home") { j = 0; }
+        else if (e.key === "End") { j = n - 1; }
+        if (j >= 0) { e.preventDefault(); select(j, true); }
+      });
+    });
+    select(0, false);
+  }
+
   /* ---- Reveal the floating WhatsApp button after the hero ---- */
   var waFloat = document.querySelector(".wa-float");
   if (waFloat) {

@@ -56,21 +56,49 @@
     });
   }
 
-  /* ---- Flow diagrams: light up the pipeline when it scrolls into view ---- */
-  var flows = document.querySelectorAll(".flow");
-  if (flows.length) {
-    if (reduce || !("IntersectionObserver" in window)) {
-      flows.forEach(function (f) { f.classList.add("in"); });
+  /* ---- Flow timelines: fill the spine + light up steps as you scroll ---- */
+  var flowList = Array.prototype.slice.call(document.querySelectorAll(".flow"));
+  var flowUpdate = function () {};
+  if (flowList.length) {
+    if (reduce) {
+      flowList.forEach(function (f) {
+        f.style.setProperty("--progress", "1");
+        f.querySelectorAll(".flow-step").forEach(function (s) { s.classList.add("on"); });
+      });
     } else {
-      var fio = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in");
-            fio.unobserve(entry.target);
-          }
+      var measure = function (f) {
+        var h = f.scrollHeight || 1;
+        f.__steps = Array.prototype.slice.call(f.querySelectorAll(".flow-step")).map(function (s) {
+          var dot = s.querySelector(".flow-num-dot");
+          var center = s.offsetTop + (dot ? dot.offsetTop + dot.offsetHeight / 2 : s.offsetHeight / 2);
+          return { el: s, t: center / h };
         });
-      }, { rootMargin: "0px 0px -12% 0px", threshold: 0.15 });
-      flows.forEach(function (f) { fio.observe(f); });
+      };
+      flowUpdate = function () {
+        var vh = window.innerHeight || 1;
+        flowList.forEach(function (f) {
+          if (f.offsetParent === null) return;            // skip hidden (inactive tab)
+          if (!f.__steps) { measure(f); }
+          var r = f.getBoundingClientRect();
+          var p = (vh * 0.82 - r.top) / (r.height * 0.72);
+          if (p < 0) { p = 0; } else if (p > 1) { p = 1; }
+          f.style.setProperty("--progress", p.toFixed(3));
+          f.__steps.forEach(function (st) {
+            if (p >= st.t - 0.015) { st.el.classList.add("on"); }
+          });
+        });
+      };
+      var fTicking = false;
+      window.addEventListener("scroll", function () {
+        if (!fTicking) { fTicking = true; window.requestAnimationFrame(function () { flowUpdate(); fTicking = false; }); }
+      }, { passive: true });
+      window.addEventListener("resize", function () {
+        flowList.forEach(function (f) { f.__steps = null; }); flowUpdate();
+      });
+      window.addEventListener("load", function () {
+        flowList.forEach(function (f) { f.__steps = null; }); flowUpdate();
+      });
+      flowUpdate();
     }
   }
 
@@ -90,7 +118,12 @@
         p.hidden = i !== idx;
         if (i === idx) {
           var flow = p.querySelector(".flow");
-          if (flow) { flow.classList.remove("in"); void flow.offsetWidth; flow.classList.add("in"); }
+          if (flow) {
+            flow.style.setProperty("--progress", "0");
+            flow.querySelectorAll(".flow-step").forEach(function (s) { s.classList.remove("on"); });
+            flow.__steps = null;
+            window.requestAnimationFrame(function () { flowUpdate(); });
+          }
         }
       });
     };

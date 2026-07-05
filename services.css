@@ -61,85 +61,92 @@
   line-height: 1.5; text-wrap: pretty; }
 
 /* =========================================================================
-   FLOW DIAGRAM — the interactive pipeline (landing + every detail page)
-   Horizontal track on wide screens, vertical on narrow. Numbered nodes with
-   a connector that draws in on scroll; steps stagger up in sequence; hover /
-   focus lifts a node and reveals its note.
+   FLOW TIMELINE — scroll-driven pipeline (landing + every detail page)
+   A spine that fills as you scroll, dots that light up in sequence, and cards
+   that settle in as the fill reaches them. Left spine on narrow screens; a
+   centred, alternating spine on wider ones. One component, used everywhere.
    ========================================================================= */
-.flow { --flow-gap: clamp(.5rem, .2rem + 1.2vw, 1.1rem);
-  list-style: none; margin: 0; padding: 0; position: relative;
-  display: grid; grid-auto-flow: column; grid-auto-columns: 1fr;
-  gap: var(--flow-gap); counter-reset: flowstep; }
-.flow-step { position: relative; display: flex; }
-.flow-node { position: relative; z-index: 1; flex: 1; display: flex;
-  flex-direction: column; gap: .6rem;
-  padding: clamp(1rem, .7rem + 1vw, 1.5rem);
-  background: var(--surface); border: 1px solid var(--hairline);
-  border-radius: var(--r-lg); min-width: 0;
-  transition: border-color .25s var(--ease), transform .25s var(--ease),
-              box-shadow .25s var(--ease), background-color .25s var(--ease); }
+.flow { --dot: 42px; --spine: 2px;
+  list-style: none; margin: clamp(1rem, .6rem + 1vw, 2rem) auto 0; padding: 0;
+  position: relative; display: block; max-width: 62rem; }
+
+/* The spine: a hairline track (::before) with an accent fill (::after) whose
+   height follows --progress, set from scroll position by script.js. */
+.flow::before, .flow::after { content: ""; position: absolute; top: 0; width: var(--spine);
+  border-radius: 2px; }
+.flow::before { bottom: 0; background: var(--hairline); }
+.flow::after { height: calc(var(--progress, 0) * 100%); background: var(--accent);
+  transition: height .1s linear;
+  box-shadow: 0 0 14px -2px color-mix(in srgb, var(--accent) 55%, transparent); }
+
+.flow-step { position: relative; }
+.flow-node { display: flex; flex-direction: column; gap: .5rem; text-align: left;
+  width: 100%; box-sizing: border-box; padding: clamp(1rem, .8rem + .6vw, 1.4rem);
+  background: var(--surface); border: 1px solid var(--hairline); border-radius: var(--r-lg);
+  transition: opacity .55s var(--ease), transform .55s var(--ease),
+              border-color .25s var(--ease), box-shadow .25s var(--ease); }
 .section-alt .flow-node { background: var(--bg); }
-.flow-node:hover, .flow-node:focus-within {
-  border-color: color-mix(in srgb, var(--accent) 55%, var(--hairline));
-  transform: translateY(-4px); box-shadow: var(--card-hover-shadow); }
-.flow-top { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
+.flow-node:hover { border-color: color-mix(in srgb, var(--accent) 45%, var(--hairline));
+  box-shadow: var(--card-hover-shadow); }
+.flow-top { display: flex; align-items: center; gap: .5rem; }
 .flow-ico { width: 40px; height: 40px; flex: none; display: grid; place-items: center;
-  border-radius: 11px; border: 1px solid var(--hairline);
-  background: var(--bg); color: var(--accent); }
+  border-radius: 11px; border: 1px solid var(--hairline); background: var(--bg); color: var(--accent);
+  transition: background-color .35s var(--ease), border-color .35s var(--ease); }
 .section-alt .flow-ico { background: var(--surface); }
+.flow-ico .i8 { width: 22px; height: 22px; }
 .flow-ico svg { width: 22px; height: 22px; fill: none; stroke: currentColor;
   stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.flow-num { counter-increment: flowstep; font-family: "Geist Mono", monospace;
-  font-size: var(--fs-small); font-weight: 500; color: var(--accent);
-  letter-spacing: .02em; }
-.flow-num::before { content: counter(flowstep, decimal-leading-zero); }
+.flow-num { display: none; }
 .flow-node h3 { font-size: var(--fs-h4); font-weight: 600; letter-spacing: -0.015em;
   line-height: 1.2; text-wrap: balance; }
-.flow-node p { color: var(--muted); font-size: var(--fs-small); line-height: 1.55;
-  text-wrap: pretty; }
+.flow-node p { color: var(--muted); font-size: var(--fs-small); line-height: 1.55; text-wrap: pretty; }
 
-/* Connector between nodes: a hairline with an arrowhead that fills brand-blue
-   as the pipeline reveals. Horizontal by default. */
-.flow-step:not(:last-child)::after {
-  content: ""; position: absolute; z-index: 0; top: 50%;
-  right: calc(var(--flow-gap) * -1 - 1px); width: calc(var(--flow-gap) + 2px); height: 2px;
-  transform: translateY(-50%); background: var(--hairline);
-  transition: background-color .4s var(--ease); }
-.flow-step:not(:last-child)::before {
-  content: ""; position: absolute; z-index: 2; top: 50%;
-  right: calc(var(--flow-gap) * -1 + 1px); width: 7px; height: 7px;
-  transform: translateY(-50%) rotate(45deg);
-  border-top: 2px solid var(--hairline); border-right: 2px solid var(--hairline);
-  transition: border-color .4s var(--ease); }
+/* The dot: rides the spine, carries the step number, lights up when reached */
+.flow-num-dot { position: absolute; z-index: 2; display: grid; place-items: center;
+  width: var(--dot); height: var(--dot); border-radius: 50%;
+  background: var(--surface); border: 2px solid var(--hairline); color: var(--muted);
+  font-family: "Geist Mono", monospace; font-size: .78rem; font-weight: 500;
+  transition: background-color .35s var(--ease), border-color .35s var(--ease),
+              color .35s var(--ease), box-shadow .35s var(--ease), transform .35s var(--ease); }
+.section-alt .flow-num-dot { background: var(--bg); }
+.flow-step.on .flow-num-dot { background: var(--accent); border-color: var(--accent); color: #fff;
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 14%, transparent); }
+.flow-step.on .flow-ico { background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--hairline)); }
+.section-alt .flow-step.on .flow-ico { background: color-mix(in srgb, var(--accent) 14%, var(--bg)); }
 
-/* Reveal: nodes rise + connectors light up sequentially (JS sets --n stagger) */
-.js .flow-step { opacity: 0; transform: translateY(14px);
-  transition: opacity .5s var(--ease), transform .5s var(--ease);
-  transition-delay: calc(var(--n, 0) * 90ms); }
-.js .flow.in .flow-step { opacity: 1; transform: none; }
-.flow.in .flow-step:not(:last-child)::after { background: var(--accent);
-  transition-delay: calc(var(--n, 0) * 90ms + 160ms); }
-.flow.in .flow-step:not(:last-child)::before { border-color: var(--accent);
-  transition-delay: calc(var(--n, 0) * 90ms + 160ms); }
+/* Narrow: one spine on the left */
+.flow::before, .flow::after { left: calc(var(--dot) / 2 - var(--spine) / 2); }
+.flow-step { padding: 0 0 clamp(1.4rem, 1rem + 1.5vw, 2.4rem) calc(var(--dot) + 1.2rem); }
+.flow-step:last-child { padding-bottom: 0; }
+.flow-num-dot { left: 0; top: 0; }
 
-/* Vertical layout on narrow screens: stack, connector runs down the side */
-@media (max-width: 720px) {
-  .flow { grid-auto-flow: row; grid-auto-columns: auto; gap: 0; }
-  .flow-step { padding-left: 2.4rem; padding-bottom: 1rem; }
-  .flow-step:not(:last-child)::after { top: auto; bottom: 0; left: 1.05rem; right: auto;
-    width: 2px; height: 100%; transform: none; }
-  .flow-step:not(:last-child)::before { top: auto; bottom: -1px; left: calc(1.05rem - 2.5px);
-    right: auto; transform: rotate(135deg); }
-  .flow-step::marker { content: none; }
-  .flow-num-dot { position: absolute; left: 0; top: .2rem; width: 2.1rem; height: 2.1rem;
-    display: grid; place-items: center; border-radius: 50%; background: var(--accent);
-    color: #fff; font-family: "Geist Mono", monospace; font-size: .8rem; z-index: 3; }
+/* Wide: centred spine, cards alternate sides */
+@media (min-width: 768px) {
+  .flow { --dot: 46px; }
+  .flow::before, .flow::after { left: calc(50% - var(--spine) / 2); }
+  .flow-step { width: 50%; padding: 0 3rem clamp(2rem, 1rem + 2vw, 3.2rem) 0; box-sizing: border-box; }
+  .flow-step:nth-child(even) { margin-left: 50%; padding: 0 0 clamp(2rem, 1rem + 2vw, 3.2rem) 3rem; }
+  .flow-step:nth-child(odd) { text-align: right; }
+  .flow-step:nth-child(odd) .flow-node { text-align: left; }
+  .flow-num-dot { top: 0; }
+  .flow-step:nth-child(odd) .flow-num-dot { right: calc(-1 * var(--dot) / 2); left: auto; }
+  .flow-step:nth-child(even) .flow-num-dot { left: calc(-1 * var(--dot) / 2); }
 }
-@media (min-width: 721px) { .flow-num-dot { display: none; } }
+
+/* Entrance: cards wait dimmed + nudged, then settle when their dot is reached */
+.js .flow-node { opacity: .16; transform: translateY(12px); }
+.js .flow-step.on .flow-node { opacity: 1; transform: none; }
+@media (min-width: 768px) {
+  .js .flow-step:nth-child(odd) .flow-node { transform: translateX(16px); }
+  .js .flow-step:nth-child(even) .flow-node { transform: translateX(-16px); }
+  .js .flow-step.on .flow-node { transform: none; }
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .js .flow-step { opacity: 1; transform: none; transition: none; }
-  .flow-node { transition: none; }
+  .js .flow-node { opacity: 1; transform: none; transition: none; }
+  .flow::after { transition: none; }
+  .flow-num-dot, .flow-ico { transition: none; }
 }
 
 /* =========================================================================

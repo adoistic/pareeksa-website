@@ -563,6 +563,70 @@ a { color: inherit; text-decoration: none; }
   border-radius: 50%; background: var(--accent);
 }
 
+/* Hero Trust Badges — Government registrations in hero -------------------- */
+.hero-trust {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.2rem, 1rem + 1.2vw, 2rem);
+  margin-top: clamp(2rem, 1.5rem + 1.5vw, 2.8rem);
+  padding: 0;
+}
+
+.hero-trust-label {
+  font-family: "Geist Mono", monospace;
+  font-size: var(--fs-caption);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+  opacity: 0.75;
+  white-space: nowrap;
+  flex: none;
+}
+
+.hero-trust-creds {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 0.8rem + 1vw, 1.6rem);
+}
+
+.hero-cred {
+  display: inline-grid;
+  place-items: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  transition: transform .2s var(--ease), opacity .2s var(--ease);
+  flex: none;
+}
+
+.hero-cred img {
+  display: block;
+  width: auto;
+  height: clamp(48px, 5vw, 70px);
+  object-fit: contain;
+}
+
+.hero-cred:hover {
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 640px) {
+  .hero-trust {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .hero-trust-creds {
+    gap: 1.2rem;
+    width: 100%;
+  }
+}
+
 /* ---- Cards / grids ------------------------------------------------------ */
 .grid { display: grid; gap: clamp(.9rem, .5rem + 1.3vw, 1.5rem); }
 .grid-exam { grid-template-columns: repeat(2, minmax(0, 1fr)); }

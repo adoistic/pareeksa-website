@@ -17,12 +17,19 @@
   /* ---- Mobile menu ---- */
   var menuBtn = document.querySelector(".menu-toggle");
   var mobileNav = document.getElementById("mobile-nav");
+  var mobileDropTriggers = document.querySelectorAll(".mobile-dropdown-trigger");
+
   if (menuBtn && mobileNav) {
     var setMenu = function (open) {
       menuBtn.setAttribute("aria-expanded", String(open));
       mobileNav.classList.toggle("open", open);
       if (open) { mobileNav.hidden = false; }
-      else { mobileNav.hidden = true; }
+      else {
+        mobileNav.hidden = true;
+        mobileDropTriggers.forEach(function (trig) {
+          trig.setAttribute("aria-expanded", "false");
+        });
+      }
     };
     menuBtn.addEventListener("click", function () {
       setMenu(menuBtn.getAttribute("aria-expanded") !== "true");
@@ -34,6 +41,22 @@
       if (e.key === "Escape") { setMenu(false); }
     });
   }
+
+  /* ---- Mobile dropdown accordion ---- */
+  mobileDropTriggers.forEach(function (trig) {
+    trig.addEventListener("click", function (e) {
+      e.preventDefault();
+      var expanded = trig.getAttribute("aria-expanded") === "true";
+      trig.setAttribute("aria-expanded", String(!expanded));
+    });
+  });
+
+  /* ---- Desktop dropdown trigger click prevention ---- */
+  document.querySelectorAll(".nav-dropdown-trigger").forEach(function (trigger) {
+    trigger.addEventListener("click", function (e) {
+      e.preventDefault();
+    });
+  });
 
   /* ---- Scroll reveal ---- */
   var reveals = document.querySelectorAll(".reveal");

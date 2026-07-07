@@ -174,8 +174,40 @@
     </a>
 
     <nav class="nav" aria-label="Primary">
-      <a href="#examinations">Examinations</a>
-      <a href="#capabilities">Capabilities</a>
+      <div class="nav-dropdown">
+        <a href="#" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          Examinations <span class="nav-arrow"></span>
+        </a>
+        <div class="nav-dropdown-menu">
+          <a href="omr.html">OMR Software &amp; Services</a>
+          <a href="osm.html">On-screen Marking</a>
+          <a href="online-examination.html">Online Examination</a>
+          <a href="pre-post-examination.html">Pre &amp; Post Examination</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="#" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          Capabilities <span class="nav-arrow"></span>
+        </a>
+        <div class="nav-dropdown-menu nav-mega-menu">
+          <div class="nav-mega-column">
+            <h4 class="nav-mega-title">Document Intelligence</h4>
+            <a href="ocr.html">OCR</a>
+            <a href="icr.html">ICR</a>
+            <a href="document-scanning.html">Document Scanning</a>
+            <a href="document-management.html">Document Management</a>
+            <a href="printing.html">Printing</a>
+          </div>
+          <div class="nav-mega-column">
+            <h4 class="nav-mega-title">Build &amp; AI</h4>
+            <a href="custom-portals.html">Custom Portals</a>
+            <a href="ai-modules.html">AI Modules</a>
+            <a href="agentic-ai.html">Agentic AI Voice Calls</a>
+            <a href="app-security.html">App Security Testing</a>
+            <a href="translation.html">Translation</a>
+          </div>
+        </div>
+      </div>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -194,8 +226,40 @@
     </div>
   </div>
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
-    <a href="#examinations">Examinations</a>
-    <a href="#capabilities">Capabilities</a>
+    <div class="mobile-dropdown">
+      <button class="mobile-dropdown-trigger" type="button" aria-expanded="false">
+        Examinations <span class="nav-arrow"></span>
+      </button>
+      <div class="mobile-dropdown-menu">
+        <a href="omr.html">OMR Software &amp; Services</a>
+        <a href="osm.html">On-screen Marking</a>
+        <a href="online-examination.html">Online Examination</a>
+        <a href="pre-post-examination.html">Pre &amp; Post Examination</a>
+      </div>
+    </div>
+    <div class="mobile-dropdown">
+      <button class="mobile-dropdown-trigger" type="button" aria-expanded="false">
+        Capabilities <span class="nav-arrow"></span>
+      </button>
+      <div class="mobile-dropdown-menu mobile-mega-menu">
+        <div class="mobile-mega-section">
+          <h4 class="mobile-mega-title">Document Intelligence</h4>
+          <a href="ocr.html">OCR</a>
+          <a href="icr.html">ICR</a>
+          <a href="document-scanning.html">Document Scanning</a>
+          <a href="document-management.html">Document Management</a>
+          <a href="printing.html">Printing</a>
+        </div>
+        <div class="mobile-mega-section">
+          <h4 class="mobile-mega-title">Build &amp; AI</h4>
+          <a href="custom-portals.html">Custom Portals</a>
+          <a href="ai-modules.html">AI Modules</a>
+          <a href="agentic-ai.html">Agentic AI Voice Calls</a>
+          <a href="app-security.html">App Security Testing</a>
+          <a href="translation.html">Translation</a>
+        </div>
+      </div>
+    </div>
     <a href="#contact">Contact</a>
     <a class="mobile-cta" href="https://wa.me/919999026602" target="_blank" rel="noopener">Message on WhatsApp</a>
   </nav>
@@ -210,6 +274,7 @@
       <p class="eyebrow reveal">Examination technology</p>
       <h1 class="hero-title reveal" id="hero-title">The exam, <br>examined.</h1>
       <p class="hero-lead reveal">Pareeksa builds the software that scans, marks and runs examinations — OMR sheets, on-screen marking, online tests. Past the exam hall we also handle document capture, custom apps and AI work.</p>
+   
       <div class="hero-actions reveal">
         <a class="btn btn-primary" href="https://wa.me/919999026602" target="_blank" rel="noopener">
           <svg class="btn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>
@@ -220,6 +285,13 @@
           <svg class="btn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg>
         </a>
       </div>
+      <div class="hero-trust reveal" aria-label="Government registrations">
+        <span class="hero-trust-label">Government Registered</span>
+        <div class="hero-trust-creds">
+          <span class="cred hero-cred"><img src="assets/badges/gem.png" width="273" height="178" alt="Registered on GeM — Government e-Marketplace" loading="lazy"></span>
+          <span class="cred hero-cred"><img src="assets/badges/msme.svg" width="394" height="394" alt="MSME registered — Micro, Small &amp; Medium Enterprises" loading="lazy"></span>
+        </div>
+      </div>
       <ul class="hero-proof reveal">
         <li>Blind, verified marking</li>
         <li>Per-institution deployment</li>
@@ -228,16 +300,7 @@
     </div>
   </section>
 
-  <!-- TRUST / REGISTRATIONS -->
-  <section class="trust" aria-label="Government registrations">
-    <div class="wrap trust-inner">
-      <span class="trust-label">Registered with</span>
-      <div class="creds trust-creds">
-        <span class="cred"><img src="assets/badges/gem.png" width="273" height="178" alt="Registered on GeM — Government e-Marketplace" loading="lazy"></span>
-        <span class="cred"><img src="assets/badges/msme.svg" width="394" height="394" alt="MSME registered — Micro, Small &amp; Medium Enterprises" loading="lazy"></span>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- EXAMINATIONS -->
   <section class="section" id="examinations" aria-labelledby="exam-h">

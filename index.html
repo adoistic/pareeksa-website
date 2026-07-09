@@ -340,64 +340,6 @@
     </div>
   </section>
 
-  <!-- HOW IT WORKS — interactive pipeline -->
-  <section class="section section-alt" id="how" aria-labelledby="how-h">
-    <div class="wrap">
-      <header class="section-head">
-        <p class="eyebrow reveal">How it works</p>
-        <h2 class="section-title reveal" id="how-h">One answer, start to result</h2>
-        <p class="section-lead reveal">Every job runs as a pipeline: each step hands checked work to the next, with nothing re-keyed by hand in the middle. Pick a path and watch it run.</p>
-      </header>
-
-      <div class="pipeline-wrap reveal">
-        <div class="pipe-tabs" role="tablist" aria-label="Choose an examination pipeline">
-          <button class="pipe-tab" role="tab" id="tab-omr" aria-controls="panel-omr" aria-selected="true">
-            <span class="i8" style="--i:url(assets/i8/scan.png)" aria-hidden="true"></span>OMR
-          </button>
-          <button class="pipe-tab" role="tab" id="tab-osm" aria-controls="panel-osm" aria-selected="false">
-            <span class="i8" style="--i:url(assets/i8/signature.png)" aria-hidden="true"></span>On-screen marking
-          </button>
-          <button class="pipe-tab" role="tab" id="tab-online" aria-controls="panel-online" aria-selected="false">
-            <span class="i8" style="--i:url(assets/i8/monitor.png)" aria-hidden="true"></span>Online exam
-          </button>
-        </div>
-
-        <div class="pipe-panel" id="panel-omr" role="tabpanel" aria-labelledby="tab-omr" tabindex="0">
-          <ol class="flow" aria-label="OMR pipeline, step by step">
-            <li class="flow-step" style="--n:0"><span class="flow-num-dot">01</span><div class="flow-node"><div class="flow-top"><span class="flow-ico"><span class="i8" style="--i:url(assets/i8/signature.png)" aria-hidden="true"></span></span><span class="flow-num"></span></div><h3>Marking</h3><p>A candidate fills the bubbles on a printed OMR sheet.</p></div></li>
-            <li class="flow-step" style="--n:1"><span class="flow-num-dot">02</span><div class="flow-node"><div class="flow-top"><span class="flow-ico"><span class="i8" style="--i:url(assets/i8/scan.png)" aria-hidden="true"></span></span><span class="flow-num"></span></div><h3>Scanning</h3><p>Sheets run through high-speed scanners — in your building or ours.</p></div></li>
-            <li class="flow-step" style="--n:2"><span class="flow-num-dot">03</span><div class="flow-node"><div class="flow-top"><span class="flow-ico"><span class="i8" style="--i:url(assets/i8/download.png)" aria-hidden="true"></span></span><span class="flow-num"></span></div><h3>Data extraction</h3><p>The software reads every mark and pulls out the responses.</p></div></li>
-            <li class="flow-step" style="--n:3"><span class="flow-num-dot">04</span><div class="flow-node"><div class="flow-top"><span class="flow-ico"><span class="i8" style="--i:url(assets/i8/check-quality.png)" aria-hidden="true"></span></span><span class="flow-num"></span></div><h3>Evaluation</h3><p>Answers are scored against the key, with error checks on every sheet.</p></div></li>
-            <li class="flow-step" style="--n:4"><span class="flow-num-dot">05</span><div class="flow-node"><div class="flow-top"><span class="flow-ico"><span class="i8" style="--i:url(assets/i8/report.png)" aria-hidden="true"></span></span><span class="flow-num"></span></div><h3>Reports</h3><p>Results and statistics come out the far end, ready to publish.</p></div></li>
-          </ol>
-        </div>
-
-        <div class="pipe-panel" id="panel-osm" role="tabpanel" aria-labelledby="tab-osm" tabindex="0" hidden>
-          <ol class="flow" aria-label="On-screen marking pipeline, step by step">
-            <li class="flow-step" style="--n:0"><span class="flow-num-dot">01</span><div class="flow-node"><div class="flow-top"><span class="flow-ico"><span class="i8" style="--i:url(assets/i8/scan.png)" aria-hidden="true"></span></span><span class="flow-num"></span></div><h3>Scan &amp; upload</h3><p>Answer booklets are scanned and loaded onto a secure server.</p></div></li>
-            <li class="flow-step" style="--n:1"><span class="flow-num-dot">02</span><div class="flow-node"><div class="flow-top"><span class="flow-ico"><span class="i8" style="--i:url(assets/i8/shuffle.png)" aria-hidden="true"></span></span><span class="flow-num"></span></div><h3>Blind allocation</h3><p>Scripts go out to markers with the candidate's identity stripped off.</p></div></li>
-            <li class="flow-step" style="--n:2"><span class="flow-num-dot">03</span><div class="flow-node"><div class="flow-top"><span class="flow-ico"><span class="i8" style="--i:url(assets/i8/signature.png)" aria-hidden="true"></span></span><span class="flow-num"></span></div><h3>On-screen marking</h3><p>Markers annotate and score with proper marking tools, on screen.</p></div></li>
-            <li class="flow-step" style="--n:3"><span class="flow-num-dot">04</span><div class="flow-node"><div class="flow-top"><span class="flow-ico"><span class="i8" style="--i:url(assets/i8/eye.png)" aria-hidden="true"></span></span><span class="flow-num"></span></div><h3>Verified marking</h3><p>A webcam check confirms the right person is marking, and only them.</p></div></li>
-            <li class="flow-step" style="--n:4"><span class="flow-num-dot">05</span><div class="flow-node"><div class="flow-top"><span class="flow-ico"><span class="i8" style="--i:url(assets/i8/layers.png)" aria-hidden="true"></span></span><span class="flow-num"></span></div><h3>Auto-compiled results</h3><p>The system totals the marks and builds the reports itself.</p></div></li>
-          </ol>
-        </div>
-
-        <div class="pipe-panel" id="panel-online" role="tabpanel" aria-labelledby="tab-online" tabindex="0" hidden>
-          <ol class="flow" aria-label="Online examination pipeline, step by step">
-            <li class="flow-step" style="--n:0"><span class="flow-num-dot">01</span><div class="flow-node"><div class="flow-top"><span class="flow-ico"><span class="i8" style="--i:url(assets/i8/registration.png)" aria-hidden="true"></span></span><span class="flow-num"></span></div><h3>Registration</h3><p>Candidates enrol and get their credentials.</p></div></li>
-            <li class="flow-step" style="--n:1"><span class="flow-num-dot">02</span><div class="flow-node"><div class="flow-top"><span class="flow-ico"><span class="i8" style="--i:url(assets/i8/key.png)" aria-hidden="true"></span></span><span class="flow-num"></span></div><h3>Login &amp; auth</h3><p>Identity is checked before anyone can start.</p></div></li>
-            <li class="flow-step" style="--n:2"><span class="flow-num-dot">03</span><div class="flow-node"><div class="flow-top"><span class="flow-ico"><span class="i8" style="--i:url(assets/i8/monitor.png)" aria-hidden="true"></span></span><span class="flow-num"></span></div><h3>Examination</h3><p>The timed paper runs on screen, invigilated live.</p></div></li>
-            <li class="flow-step" style="--n:3"><span class="flow-num-dot">04</span><div class="flow-node"><div class="flow-top"><span class="flow-ico"><span class="i8" style="--i:url(assets/i8/upload.png)" aria-hidden="true"></span></span><span class="flow-num"></span></div><h3>Auto-submission</h3><p>Answers save and submit on their own when time runs out.</p></div></li>
-            <li class="flow-step" style="--n:4"><span class="flow-num-dot">05</span><div class="flow-node"><div class="flow-top"><span class="flow-ico"><span class="i8" style="--i:url(assets/i8/check-quality.png)" aria-hidden="true"></span></span><span class="flow-num"></span></div><h3>Evaluation</h3><p>Objective questions score instantly against the key.</p></div></li>
-            <li class="flow-step" style="--n:5"><span class="flow-num-dot">06</span><div class="flow-node"><div class="flow-top"><span class="flow-ico"><span class="i8" style="--i:url(assets/i8/report.png)" aria-hidden="true"></span></span><span class="flow-num"></span></div><h3>Results</h3><p>Scores and reports are ready as the exam closes.</p></div></li>
-          </ol>
-        </div>
-
-        <p class="pipeline-note"><span class="i8" style="--i:url(assets/i8/audit.png)" aria-hidden="true"></span>Every step is logged, so any result traces back to the sheet it came from.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- CAPABILITIES -->
   <section class="section" id="capabilities" aria-labelledby="cap-h">
     <div class="wrap">
@@ -499,6 +441,48 @@
     </div>
   </section>
 
+  <!-- WHAT WE STAND FOR -->
+  <section class="section section-alt" id="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow reveal">Our foundation</p>
+        <h2 class="section-title reveal" id="how-h">What we stand for</h2>
+        <p class="section-lead reveal">Every service we build and every result we deliver is grounded in five commitments — not slogans, but the way we actually work.</p>
+      </header>
+
+      <div class="grid grid-values">
+        <article class="card reveal">
+          <span class="val-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ic-omr"/></svg></span>
+          <h3 class="card-title">Trusted Exam Delivery</h3>
+          <p class="card-body">OMR, on-screen marking, and online tests — run with verified accuracy and a complete audit trail on every sheet.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="val-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ic-ocr"/></svg></span>
+          <h3 class="card-title">Document Intelligence</h3>
+          <p class="card-body">OCR, ICR, and high-volume scanning convert paper records into searchable, structured data — tuned to your documents, not a generic model.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="val-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ic-security"/></svg></span>
+          <h3 class="card-title">Verified &amp; Auditable</h3>
+          <p class="card-body">Every step is logged. Results trace back to the sheet, the scan, and the marker — so institutions can stand behind every outcome.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="val-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ic-portals"/></svg></span>
+          <h3 class="card-title">Built for Institutions</h3>
+          <p class="card-body">Per-institution deployments, blind marking, and role-based access — designed around how schools, boards, and enterprises actually operate.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="val-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ic-ai"/></svg></span>
+          <h3 class="card-title">Intelligent Automation</h3>
+          <p class="card-body">Task-scoped AI, agentic voice calls, and automated workflows cut manual effort without replacing the human judgment that matters.</p>
+        </article>
+      </div>
+    </div>
+  </section>
   <!-- CONTACT -->
   <section class="section section-alt" id="contact" aria-labelledby="contact-h">
     <div class="wrap contact-grid">

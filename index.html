@@ -285,11 +285,11 @@
           <svg class="btn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg>
         </a>
       </div>
-      <div class="hero-trust reveal" aria-label="Registered With">
-        <span class="hero-trust-label">Registered With</span>
+      <div class="hero-trust reveal" aria-label="Government registrations">
+        <span class="hero-trust-label">Government Registered</span>
         <div class="hero-trust-creds">
-          <span class="cred hero-cred"><img src="gem-logo.png" width="273" height="178" alt="Registered on GeM — Government e-Marketplace" loading="lazy"></span>
-          <span class="cred hero-cred"><img src="MSME_Logo.svg" width="394" height="394" alt="MSME registered — Micro, Small &amp; Medium Enterprises" loading="lazy"></span>
+          <span class="cred hero-cred"><img src="assets/badges/gem.png" width="273" height="178" alt="Registered on GeM — Government e-Marketplace" loading="lazy"></span>
+          <span class="cred hero-cred"><img src="assets/badges/msme.svg" width="394" height="394" alt="MSME registered — Micro, Small &amp; Medium Enterprises" loading="lazy"></span>
         </div>
       </div>
       <ul class="hero-proof reveal">
@@ -517,22 +517,41 @@
         </div>
       </div>
 
-      <div class="contact-card reveal">
-        <dl class="contact-dl">
-          <div class="contact-row">
-            <dt>Phone &amp; WhatsApp</dt>
-            <dd><a href="tel:+919999026602" class="mono">+91 99990 26602</a></dd>
+      <form class="contact-card contact-form reveal" aria-label="Contact form">
+        <div class="contact-form__row">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-name">Name</label>
+            <input class="contact-form__input" type="text" id="contact-name" name="name" placeholder="Your name" required>
           </div>
-          <div class="contact-row">
-            <dt>Email</dt>
-            <dd><a href="mailto:corp@pareeksa.com" class="mono">corp@<wbr>pareeksa.com</a></dd>
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-phone">Mobile Number</label>
+            <input class="contact-form__input" type="tel" id="contact-phone" name="phone" placeholder="+91 " required>
           </div>
-          <div class="contact-row">
-            <dt>GST</dt>
-            <dd><span class="mono">07ECOPS6433P1ZL</span></dd>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-email">Email Address</label>
+            <input class="contact-form__input" type="email" id="contact-email" name="email" placeholder="your.email@example.com" required>
           </div>
-        </dl>
-      </div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-org">Institute / Organization Name</label>
+            <input class="contact-form__input" type="text" id="contact-org" name="organization" placeholder="Your institute or organization">
+          </div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-message">Message</label>
+            <textarea class="contact-form__textarea" id="contact-message" name="message" rows="5" placeholder="How can we help?"></textarea>
+          </div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <button type="submit" class="btn btn-primary contact-form__submit">
+            <span>Request a Demo</span>
+          </button>
+        </div>
+      </form>
     </div>
   </section>
 
@@ -566,8 +585,8 @@
 
   <div class="wrap footer-creds">
     <span class="footer-creds-label">Registered with</span>
-    <span class="cred"><img src="gem-logo.png" width="273" height="178" alt="Registered on GeM — Government e-Marketplace" loading="lazy"></span>
-    <span class="cred"><img src="MSME_Logo.svg" width="394" height="394" alt="MSME registered — Micro, Small &amp; Medium Enterprises" loading="lazy"></span>
+    <span class="cred"><img src="assets/badges/gem.png" width="273" height="178" alt="Registered on GeM — Government e-Marketplace" loading="lazy"></span>
+    <span class="cred"><img src="assets/badges/msme.svg" width="394" height="394" alt="MSME registered — Micro, Small &amp; Medium Enterprises" loading="lazy"></span>
   </div>
   <div class="wrap footer-base">
     <p>© <span id="year">2026</span> Pareeksa Technologies</p>

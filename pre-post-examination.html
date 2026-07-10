@@ -451,8 +451,65 @@
     <p class="mono footer-gst">GST 07ECOPS6433P1ZL</p>
   </div>
 </footer>
+<button type="button" class="demo-float" aria-label="Request a demo">
+  <span>Request a Demo</span>
+</button>
 <a class="wa-float" href="https://wa.me/919999026602" target="_blank" rel="noopener" aria-label="Message Pareeksa on WhatsApp" title="Message us on WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>
 </a>
+
+<!-- Demo Modal -->
+<div id="demo-modal" class="modal" aria-hidden="true">
+  <div class="modal__overlay" tabindex="-1"></div>
+  <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button type="button" class="modal__close" aria-label="Close modal">&times;</button>
+    <div class="modal__content">
+      <h2 id="modal-title" class="modal__title">Request a Demo</h2>
+      <p class="modal__lead">Fill out the details below, and we will get back to you to schedule a live demo.</p>
+      
+      <form class="contact-form modal-form" action="https://api.web3forms.com/submit" method="POST" aria-label="Request a demo form">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        <div class="contact-form__row">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="modal-name">Name</label>
+            <input class="contact-form__input" type="text" id="modal-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="modal-phone">Mobile Number</label>
+            <input class="contact-form__input" type="tel" id="modal-phone" name="phone" placeholder="+91 " required>
+          </div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="modal-email">Email Address</label>
+            <input class="contact-form__input" type="email" id="modal-email" name="email" placeholder="your.email@example.com" required>
+          </div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="modal-org">Institute / Organization Name</label>
+            <input class="contact-form__input" type="text" id="modal-org" name="organization" placeholder="Your institute or organization">
+          </div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="modal-message">Message</label>
+            <textarea class="contact-form__textarea" id="modal-message" name="message" rows="4" placeholder="How can we help?"></textarea>
+          </div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <div class="contact-form__alert contact-form__alert--success" hidden></div>
+          <div class="contact-form__alert contact-form__alert--error" hidden></div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <button type="submit" class="btn btn-primary contact-form__submit">
+            <span>Request a Demo</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

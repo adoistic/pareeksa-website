@@ -164,13 +164,16 @@
     select(0, false);
   }
 
-  /* ---- Reveal the floating WhatsApp button after the hero ---- */
+  /* ---- Reveal the floating WhatsApp and Demo buttons after the hero ---- */
   var waFloat = document.querySelector(".wa-float");
-  if (waFloat) {
-    var hero = document.querySelector(".hero");
+  var demoFloat = document.querySelector(".demo-float");
+  if (waFloat || demoFloat) {
+    var hero = document.querySelector(".hero") || document.querySelector(".page-hero");
     var toggleFloat = function () {
       var trigger = hero ? hero.offsetHeight * 0.66 : window.innerHeight * 0.7;
-      waFloat.classList.toggle("show", window.scrollY > trigger);
+      var show = window.scrollY > trigger;
+      if (waFloat) waFloat.classList.toggle("show", show);
+      if (demoFloat) demoFloat.classList.toggle("show", show);
     };
     var ticking = false;
     window.addEventListener("scroll", function () {
@@ -181,6 +184,245 @@
     }, { passive: true });
     toggleFloat();
   }
+
+  /* ---- Demo Modal dialog trigger, open, close, accessibility ---- */
+  var modal = document.getElementById("demo-modal");
+  var modalClose = modal ? modal.querySelector(".modal__close") : null;
+  var modalOverlay = modal ? modal.querySelector(".modal__overlay") : null;
+  var lastFocusedElement = null;
+
+  var openModal = function () {
+    if (!modal) return;
+    lastFocusedElement = document.activeElement;
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+    
+    // Focus the first input field for accessibility
+    var firstInput = modal.querySelector("input:not([type=hidden]), textarea, select");
+    if (firstInput) {
+      setTimeout(function () { firstInput.focus(); }, 50);
+    }
+
+    document.addEventListener("keydown", trapFocus);
+  };
+
+  var closeModal = function () {
+    if (!modal) return;
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    
+    // Return focus to trigger button for accessibility
+    if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+      lastFocusedElement.focus();
+    }
+
+    document.removeEventListener("keydown", trapFocus);
+  };
+
+  var trapFocus = function (e) {
+    if (!modal) return;
+    var focusables = modal.querySelectorAll('button, [href], input:not([type=hidden]), textarea, select, [tabindex]:not([tabindex="-1"])');
+    if (!focusables.length) return;
+    var firstFocusable = focusables[0];
+    var lastFocusable = focusables[focusables.length - 1];
+
+    if (e.key === 'Tab') {
+      if (e.shiftKey) { /* Shift + Tab */
+        if (document.activeElement === firstFocusable) {
+          lastFocusable.focus();
+          e.preventDefault();
+        }
+      } else { /* Tab */
+        if (document.activeElement === lastFocusable) {
+          firstFocusable.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  };
+
+  window.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && modal && modal.classList.contains("open")) {
+      closeModal();
+    }
+  });
+
+  if (demoFloat) {
+    demoFloat.addEventListener("click", function (e) {
+      e.preventDefault();
+      openModal();
+    });
+  }
+  if (modalClose) {
+    modalClose.addEventListener("click", function (e) {
+      e.preventDefault();
+      closeModal();
+    });
+  }
+  if (modalOverlay) {
+    modalOverlay.addEventListener("click", function (e) {
+      e.preventDefault();
+      closeModal();
+    });
+  }
+
+  /* ---- Shared Contact Form Validation & Submission ---- */
+  var forms = document.querySelectorAll(".contact-form");
+
+  var validateEmail = function (email) {
+    var re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  var validatePhone = function (phone) {
+    var cleaned = phone.replace(/[^0-9+]/g, '');
+    return cleaned.length >= 10;
+  };
+
+  forms.forEach(function (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var successAlert = form.querySelector(".contact-form__alert--success");
+      var errorAlert = form.querySelector(".contact-form__alert--error");
+      if (successAlert) {
+        successAlert.classList.remove("show");
+        successAlert.hidden = true;
+      }
+      if (errorAlert) {
+        errorAlert.classList.remove("show");
+        errorAlert.hidden = true;
+      }
+
+      var nameInput = form.querySelector("[name='name']");
+      var phoneInput = form.querySelector("[name='phone']");
+      var emailInput = form.querySelector("[name='email']");
+      var orgInput = form.querySelector("[name='organization']");
+      var msgInput = form.querySelector("[name='message']");
+      var submitBtn = form.querySelector(".contact-form__submit");
+
+      var name = nameInput ? nameInput.value.trim() : "";
+      var phone = phoneInput ? phoneInput.value.trim() : "";
+      var email = emailInput ? emailInput.value.trim() : "";
+      var organization = orgInput ? orgInput.value.trim() : "";
+      var message = msgInput ? msgInput.value.trim() : "";
+
+      var errors = [];
+      if (!name) {
+        errors.push("Name is required.");
+        if (nameInput) nameInput.focus();
+      } else if (!phone) {
+        errors.push("Mobile number is required.");
+        if (phoneInput) phoneInput.focus();
+      } else if (!validatePhone(phone)) {
+        errors.push("Please enter a valid mobile number (at least 10 digits).");
+        if (phoneInput) phoneInput.focus();
+      } else if (!email) {
+        errors.push("Email address is required.");
+        if (emailInput) emailInput.focus();
+      } else if (!validateEmail(email)) {
+        errors.push("Please enter a valid email address.");
+        if (emailInput) emailInput.focus();
+      }
+
+      if (errors.length > 0) {
+        if (errorAlert) {
+          errorAlert.textContent = errors.join(" ");
+          errorAlert.hidden = false;
+          errorAlert.classList.add("show");
+        }
+        return;
+      }
+
+      var inputs = form.querySelectorAll("input, textarea, button");
+      inputs.forEach(function (input) { input.disabled = true; });
+      var originalBtnHTML = submitBtn ? submitBtn.innerHTML : "";
+      if (submitBtn) {
+        submitBtn.innerHTML = "<span>Sending...</span>";
+      }
+
+      var selectedService = "General Inquiry (Homepage)";
+      var h1Element = document.querySelector("h1");
+      if (h1Element) {
+        selectedService = h1Element.textContent.trim().replace(/\s+/g, ' ');
+      }
+
+      var submissionTime = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }) + " (IST)";
+      var endpoint = form.getAttribute("action") || "https://api.web3forms.com/submit";
+      var accessKeyField = form.querySelector("[name='access_key']");
+      var accessKey = accessKeyField ? accessKeyField.value : "";
+      var subjectLine = "New Demo Request – " + selectedService + " – " + name;
+
+      var payload = {
+        name: name,
+        phone: phone,
+        email: email,
+        organization: organization,
+        message: message,
+        selected_service: selectedService,
+        submission_time: submissionTime,
+        subject: subjectLine
+      };
+
+      if (accessKey) {
+        payload.access_key = accessKey;
+      }
+
+      fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(function (response) {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Server responded with code " + response.status);
+        }
+      })
+      .then(function (data) {
+        inputs.forEach(function (input) { input.disabled = false; });
+        if (submitBtn) {
+          submitBtn.innerHTML = originalBtnHTML;
+        }
+
+        if (successAlert) {
+          successAlert.textContent = "Thank you! Your demo request has been sent successfully. We will contact you soon.";
+          successAlert.hidden = false;
+          successAlert.classList.add("show");
+        }
+
+        form.reset();
+
+        if (form.classList.contains("modal-form")) {
+          setTimeout(function () {
+            closeModal();
+            setTimeout(function () {
+              if (successAlert) {
+                successAlert.classList.remove("show");
+                successAlert.hidden = true;
+              }
+            }, 400);
+          }, 2000);
+        }
+      })
+      .catch(function (error) {
+        inputs.forEach(function (input) { input.disabled = false; });
+        if (submitBtn) {
+          submitBtn.innerHTML = originalBtnHTML;
+        }
+
+        if (errorAlert) {
+          errorAlert.textContent = "Oops! Something went wrong. Please check your connection and try again.";
+          errorAlert.hidden = false;
+          errorAlert.classList.add("show");
+        }
+      });
+    });
+  });
 
   /* ---- Brand page: click a swatch to copy its hex ---- */
   document.querySelectorAll(".swatch").forEach(function (sw) {
@@ -200,4 +442,5 @@
   /* ---- Current year ---- */
   var year = document.getElementById("year");
   if (year) { year.textContent = String(new Date().getFullYear()); }
+
 })();

@@ -503,14 +503,31 @@ def header():
             <a href="document-scanning.html">Document Scanning</a>
             <a href="document-management.html">Document Management</a>
             <a href="printing.html">Printing</a>
+            <a href="ai-examination-document-solutions.html">AI-driven Examination &amp; Document Solutions</a>
           </div>
           <div class="nav-mega-column">
-            <h4 class="nav-mega-title">Build &amp; AI</h4>
+            <h4 class="nav-mega-title">Digital Engineering</h4>
             <a href="custom-portals.html">Custom Portals</a>
+            <a href="ai-modules.html">High Performance Platforms &amp; Applications</a>
+            <a href="agentic-ai.html">Cloud &amp; DevOps</a>
+            <a href="app-security.html">App Security Testing</a>
+            <a href="translation.html">Internet of Things (IoT)</a>
+          </div>
+          <div class="nav-mega-column">
+            <h4 class="nav-mega-title">AI &amp; Intelligent Systems</h4>
+            <a href="artificial-intelligence.html">Artificial Intelligence</a>
             <a href="ai-modules.html">AI Modules</a>
             <a href="agentic-ai.html">Agentic AI Voice Calls</a>
-            <a href="app-security.html">App Security Testing</a>
             <a href="translation.html">Translation</a>
+            <a href="app-security.html">Blockchain &amp; Identity</a>
+            <a href="app-security.html">Data Analytics</a>
+          </div>
+          <div class="nav-mega-column">
+            <h4 class="nav-mega-title">Emerging Technologies</h4>
+            <a href="drones-uavs.html">Drones &amp; UAVs</a>
+            <a href="ai-modules.html">Robotics &amp; Systems</a>
+            <a href="agentic-ai.html">Solar &amp; Energy</a>
+            <a href="translation.html">Tech Skilling</a>
           </div>
         </div>
       </div>
@@ -554,14 +571,31 @@ def header():
           <a href="document-scanning.html">Document Scanning</a>
           <a href="document-management.html">Document Management</a>
           <a href="printing.html">Printing</a>
+          <a href="ai-examination-document-solutions.html">AI-driven Examination &amp; Document Solutions</a>
         </div>
         <div class="mobile-mega-section">
-          <h4 class="mobile-mega-title">Build &amp; AI</h4>
+          <h4 class="mobile-mega-title">Digital Engineering</h4>
           <a href="custom-portals.html">Custom Portals</a>
+          <a href="ai-modules.html">High Performance Platforms &amp; Applications</a>
+          <a href="agentic-ai.html">Cloud &amp; DevOps</a>
+          <a href="app-security.html">App Security Testing</a>
+          <a href="translation.html">Internet of Things (IoT)</a>
+        </div>
+        <div class="mobile-mega-section">
+          <h4 class="mobile-mega-title">AI &amp; Intelligent Systems</h4>
+          <a href="artificial-intelligence.html">Artificial Intelligence</a>
           <a href="ai-modules.html">AI Modules</a>
           <a href="agentic-ai.html">Agentic AI Voice Calls</a>
-          <a href="app-security.html">App Security Testing</a>
           <a href="translation.html">Translation</a>
+          <a href="app-security.html">Blockchain &amp; Identity</a>
+          <a href="app-security.html">Data Analytics</a>
+        </div>
+        <div class="mobile-mega-section">
+          <h4 class="mobile-mega-title">Emerging Technologies</h4>
+          <a href="drones-uavs.html">Drones &amp; UAVs</a>
+          <a href="ai-modules.html">Robotics &amp; Systems</a>
+          <a href="agentic-ai.html">Solar &amp; Energy</a>
+          <a href="translation.html">Tech Skilling</a>
         </div>
       </div>
     </div>

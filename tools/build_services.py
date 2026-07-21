@@ -632,7 +632,7 @@ def footer():
   <div class="wrap footer-creds">
     <span class="footer-creds-label">Registered with</span>
     <span class="cred"><img src="assets/badges/gem.png" width="273" height="178" alt="Registered on GeM — Government e-Marketplace" loading="lazy"></span>
-    <span class="cred"><img src="assets/badges/msme.svg" width="394" height="394" alt="MSME registered — Micro, Small &amp; Medium Enterprises" loading="lazy"></span>
+    <span class="cred"><img src="Importance-1-e1536998812445.png" width="394" height="394" alt="MSME registered — Micro, Small &amp; Medium Enterprises" loading="lazy"></span>
   </div>
   <div class="wrap footer-base">
     <p>© <span id="year">2026</span> Pareeksa Technologies</p>

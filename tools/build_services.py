@@ -482,20 +482,16 @@ def header():
     <nav class="nav" aria-label="Primary">
       <div class="nav-dropdown">
         <a href="#" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-          Examinations <span class="nav-arrow"></span>
-        </a>
-        <div class="nav-dropdown-menu">
-          <a href="omr.html">OMR Software &amp; Services</a>
-          <a href="osm.html">On-screen Marking</a>
-          <a href="online-examination.html">Online Examination</a>
-          <a href="pre-post-examination.html">Pre &amp; Post Examination</a>
-        </div>
-      </div>
-      <div class="nav-dropdown">
-        <a href="#" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
           Capabilities <span class="nav-arrow"></span>
         </a>
         <div class="nav-dropdown-menu nav-mega-menu">
+          <div class="nav-mega-column">
+            <h4 class="nav-mega-title">Examinations</h4>
+            <a href="omr.html">OMR Software &amp; Services</a>
+            <a href="osm.html">On-screen Marking</a>
+            <a href="online-examination.html">Online Examination</a>
+            <a href="pre-post-examination.html">Pre &amp; Post Examination</a>
+          </div>
           <div class="nav-mega-column">
             <h4 class="nav-mega-title">Document Intelligence</h4>
             <a href="ocr.html">OCR</a>
@@ -503,15 +499,15 @@ def header():
             <a href="document-scanning.html">Document Scanning</a>
             <a href="document-management.html">Document Management</a>
             <a href="printing.html">Printing</a>
-            <a href="ai-examination-document-solutions.html">AI-driven Examination &amp; Document Solutions</a>
+            <a href="ai-examination.html">AI-driven Examination &amp; Document Solutions</a>
           </div>
           <div class="nav-mega-column">
             <h4 class="nav-mega-title">Digital Engineering</h4>
             <a href="custom-portals.html">Custom Portals</a>
-            <a href="ai-modules.html">High Performance Platforms &amp; Applications</a>
-            <a href="agentic-ai.html">Cloud &amp; DevOps</a>
+            <a href="high-performance-platforms.html">High Performance Platforms &amp; Applications</a>
+            <a href="cloud-devops.html">Cloud &amp; DevOps</a>
             <a href="app-security.html">App Security Testing</a>
-            <a href="translation.html">Internet of Things (IoT)</a>
+            <a href="internet-of-things.html">Internet of Things (IoT)</a>
           </div>
           <div class="nav-mega-column">
             <h4 class="nav-mega-title">AI &amp; Intelligent Systems</h4>
@@ -519,15 +515,15 @@ def header():
             <a href="ai-modules.html">AI Modules</a>
             <a href="agentic-ai.html">Agentic AI Voice Calls</a>
             <a href="translation.html">Translation</a>
-            <a href="app-security.html">Blockchain &amp; Identity</a>
-            <a href="app-security.html">Data Analytics</a>
+            <a href="blockchain-identity.html">Blockchain &amp; Identity</a>
+            <a href="data-analytics.html">Data Analytics</a>
           </div>
           <div class="nav-mega-column">
             <h4 class="nav-mega-title">Emerging Technologies</h4>
             <a href="drones-uavs.html">Drones &amp; UAVs</a>
-            <a href="ai-modules.html">Robotics &amp; Systems</a>
-            <a href="agentic-ai.html">Solar &amp; Energy</a>
-            <a href="translation.html">Tech Skilling</a>
+            <a href="robotics-systems.html">Robotics &amp; Systems</a>
+            <a href="solar-energy.html">Solar &amp; Energy</a>
+            <a href="tech-skilling.html">Tech Skilling</a>
           </div>
         </div>
       </div>
@@ -550,20 +546,16 @@ def header():
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
     <div class="mobile-dropdown">
       <button class="mobile-dropdown-trigger" type="button" aria-expanded="false">
-        Examinations <span class="nav-arrow"></span>
-      </button>
-      <div class="mobile-dropdown-menu">
-        <a href="omr.html">OMR Software &amp; Services</a>
-        <a href="osm.html">On-screen Marking</a>
-        <a href="online-examination.html">Online Examination</a>
-        <a href="pre-post-examination.html">Pre &amp; Post Examination</a>
-      </div>
-    </div>
-    <div class="mobile-dropdown">
-      <button class="mobile-dropdown-trigger" type="button" aria-expanded="false">
         Capabilities <span class="nav-arrow"></span>
       </button>
       <div class="mobile-dropdown-menu mobile-mega-menu">
+        <div class="mobile-mega-section">
+          <h4 class="mobile-mega-title">Examinations</h4>
+          <a href="omr.html">OMR Software &amp; Services</a>
+          <a href="osm.html">On-screen Marking</a>
+          <a href="online-examination.html">Online Examination</a>
+          <a href="pre-post-examination.html">Pre &amp; Post Examination</a>
+        </div>
         <div class="mobile-mega-section">
           <h4 class="mobile-mega-title">Document Intelligence</h4>
           <a href="ocr.html">OCR</a>
@@ -571,15 +563,15 @@ def header():
           <a href="document-scanning.html">Document Scanning</a>
           <a href="document-management.html">Document Management</a>
           <a href="printing.html">Printing</a>
-          <a href="ai-examination-document-solutions.html">AI-driven Examination &amp; Document Solutions</a>
+          <a href="ai-examination.html">AI-driven Examination &amp; Document Solutions</a>
         </div>
         <div class="mobile-mega-section">
           <h4 class="mobile-mega-title">Digital Engineering</h4>
           <a href="custom-portals.html">Custom Portals</a>
-          <a href="ai-modules.html">High Performance Platforms &amp; Applications</a>
-          <a href="agentic-ai.html">Cloud &amp; DevOps</a>
+          <a href="high-performance-platforms.html">High Performance Platforms &amp; Applications</a>
+          <a href="cloud-devops.html">Cloud &amp; DevOps</a>
           <a href="app-security.html">App Security Testing</a>
-          <a href="translation.html">Internet of Things (IoT)</a>
+          <a href="internet-of-things.html">Internet of Things (IoT)</a>
         </div>
         <div class="mobile-mega-section">
           <h4 class="mobile-mega-title">AI &amp; Intelligent Systems</h4>
@@ -587,15 +579,15 @@ def header():
           <a href="ai-modules.html">AI Modules</a>
           <a href="agentic-ai.html">Agentic AI Voice Calls</a>
           <a href="translation.html">Translation</a>
-          <a href="app-security.html">Blockchain &amp; Identity</a>
-          <a href="app-security.html">Data Analytics</a>
+          <a href="blockchain-identity.html">Blockchain &amp; Identity</a>
+          <a href="data-analytics.html">Data Analytics</a>
         </div>
         <div class="mobile-mega-section">
           <h4 class="mobile-mega-title">Emerging Technologies</h4>
           <a href="drones-uavs.html">Drones &amp; UAVs</a>
-          <a href="ai-modules.html">Robotics &amp; Systems</a>
-          <a href="agentic-ai.html">Solar &amp; Energy</a>
-          <a href="translation.html">Tech Skilling</a>
+          <a href="robotics-systems.html">Robotics &amp; Systems</a>
+          <a href="solar-energy.html">Solar &amp; Energy</a>
+          <a href="tech-skilling.html">Tech Skilling</a>
         </div>
       </div>
     </div>

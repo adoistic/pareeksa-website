@@ -448,20 +448,16 @@ def build_service_html(filename, data):
     <nav class="nav" aria-label="Primary">
       <div class="nav-dropdown">
         <a href="#" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-          Examinations <span class="nav-arrow"></span>
-        </a>
-        <div class="nav-dropdown-menu">
-          <a href="omr.html">OMR Software &amp; Services</a>
-          <a href="osm.html">On-screen Marking</a>
-          <a href="online-examination.html">Online Examination</a>
-          <a href="pre-post-examination.html">Pre &amp; Post Examination</a>
-        </div>
-      </div>
-      <div class="nav-dropdown">
-        <a href="#" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
           Capabilities <span class="nav-arrow"></span>
         </a>
         <div class="nav-dropdown-menu nav-mega-menu">
+          <div class="nav-mega-column">
+            <h4 class="nav-mega-title">Examinations</h4>
+            <a href="omr.html">OMR Software &amp; Services</a>
+            <a href="osm.html">On-screen Marking</a>
+            <a href="online-examination.html">Online Examination</a>
+            <a href="pre-post-examination.html">Pre &amp; Post Examination</a>
+          </div>
           <div class="nav-mega-column">
             <h4 class="nav-mega-title">Document Intelligence</h4>
             <a href="ocr.html">OCR</a>
@@ -516,20 +512,16 @@ def build_service_html(filename, data):
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
     <div class="mobile-dropdown">
       <button class="mobile-dropdown-trigger" type="button" aria-expanded="false">
-        Examinations <span class="nav-arrow"></span>
-      </button>
-      <div class="mobile-dropdown-menu">
-        <a href="omr.html">OMR Software &amp; Services</a>
-        <a href="osm.html">On-screen Marking</a>
-        <a href="online-examination.html">Online Examination</a>
-        <a href="pre-post-examination.html">Pre &amp; Post Examination</a>
-      </div>
-    </div>
-    <div class="mobile-dropdown">
-      <button class="mobile-dropdown-trigger" type="button" aria-expanded="false">
         Capabilities <span class="nav-arrow"></span>
       </button>
       <div class="mobile-dropdown-menu mobile-mega-menu">
+        <div class="mobile-mega-section">
+          <h4 class="mobile-mega-title">Examinations</h4>
+          <a href="omr.html">OMR Software &amp; Services</a>
+          <a href="osm.html">On-screen Marking</a>
+          <a href="online-examination.html">Online Examination</a>
+          <a href="pre-post-examination.html">Pre &amp; Post Examination</a>
+        </div>
         <div class="mobile-mega-section">
           <h4 class="mobile-mega-title">Document Intelligence</h4>
           <a href="ocr.html">OCR</a>
@@ -822,8 +814,20 @@ for raw_name, target_file in raw_aliases.items():
         f.write(content)
     print(f"Created alias file: '{raw_name}' -> '{target_file}'")
 
-# Standardized Nav Blocks
-desktop_nav_mega = '''<div class="nav-dropdown-menu nav-mega-menu">
+# Standardized Nav Blocks to replace full navigation blocks across ALL html files
+desktop_nav_template = '''<nav class="nav" aria-label="Primary">
+      <div class="nav-dropdown">
+        <a href="#" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          Capabilities <span class="nav-arrow"></span>
+        </a>
+        <div class="nav-dropdown-menu nav-mega-menu">
+          <div class="nav-mega-column">
+            <h4 class="nav-mega-title">Examinations</h4>
+            <a href="omr.html">OMR Software &amp; Services</a>
+            <a href="osm.html">On-screen Marking</a>
+            <a href="online-examination.html">Online Examination</a>
+            <a href="pre-post-examination.html">Pre &amp; Post Examination</a>
+          </div>
           <div class="nav-mega-column">
             <h4 class="nav-mega-title">Document Intelligence</h4>
             <a href="ocr.html">OCR</a>
@@ -857,9 +861,24 @@ desktop_nav_mega = '''<div class="nav-dropdown-menu nav-mega-menu">
             <a href="solar-energy.html">Solar &amp; Energy</a>
             <a href="tech-skilling.html">Tech Skilling</a>
           </div>
-        </div>'''
+        </div>
+      </div>
+      <a href="{contact_href}">Contact</a>
+    </nav>'''
 
-mobile_nav_mega = '''<div class="mobile-dropdown-menu mobile-mega-menu">
+mobile_nav_template = '''<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+    <div class="mobile-dropdown">
+      <button class="mobile-dropdown-trigger" type="button" aria-expanded="false">
+        Capabilities <span class="nav-arrow"></span>
+      </button>
+      <div class="mobile-dropdown-menu mobile-mega-menu">
+        <div class="mobile-mega-section">
+          <h4 class="mobile-mega-title">Examinations</h4>
+          <a href="omr.html">OMR Software &amp; Services</a>
+          <a href="osm.html">On-screen Marking</a>
+          <a href="online-examination.html">Online Examination</a>
+          <a href="pre-post-examination.html">Pre &amp; Post Examination</a>
+        </div>
         <div class="mobile-mega-section">
           <h4 class="mobile-mega-title">Document Intelligence</h4>
           <a href="ocr.html">OCR</a>
@@ -893,25 +912,43 @@ mobile_nav_mega = '''<div class="mobile-dropdown-menu mobile-mega-menu">
           <a href="solar-energy.html">Solar &amp; Energy</a>
           <a href="tech-skilling.html">Tech Skilling</a>
         </div>
-      </div>'''
+      </div>
+    </div>
+    <a href="{contact_href}">Contact</a>
+    {mobile_cta}
+  </nav>'''
 
-# Replace mega menus across ALL html files
+# Replace navigation across ALL html files
 all_html_files = glob.glob("*.html")
 for path in all_html_files:
+    if not os.path.isfile(path):
+        continue
     with open(path, "r", encoding="utf-8") as f:
         c = f.read()
     
-    # Replace desktop mega menu
+    if '<nav class="nav"' not in c:
+        continue
+        
+    contact_href = "#contact" if os.path.basename(path) == "index.html" else "index.html#contact"
+    if os.path.basename(path) == "brand.html":
+        mobile_cta = '<a class="mobile-cta" href="#downloads">Download assets</a>'
+    else:
+        mobile_cta = '<a class="mobile-cta" href="https://wa.me/919999026602" target="_blank" rel="noopener">Message on WhatsApp</a>'
+        
+    desktop_nav_val = desktop_nav_template.format(contact_href=contact_href)
+    mobile_nav_val = mobile_nav_template.format(contact_href=contact_href, mobile_cta=mobile_cta)
+    
+    # Replace desktop nav block
     c_new = re.sub(
-        r'<div class="nav-dropdown-menu nav-mega-menu">[\s\S]*?</div>\s*</div>\s*</div>',
-        desktop_nav_mega + '\n      </div>',
+        r'<nav class="nav" aria-label="Primary">[\s\S]*?</nav>',
+        desktop_nav_val,
         c
     )
     
-    # Replace mobile mega menu
+    # Replace mobile nav block
     c_new = re.sub(
-        r'<div class="mobile-dropdown-menu mobile-mega-menu">[\s\S]*?</div>\s*</div>',
-        mobile_nav_mega + '\n    </div>',
+        r'<nav class="mobile-nav" id="mobile-nav"[^>]*>[\s\S]*?</nav>',
+        mobile_nav_val,
         c_new
     )
     

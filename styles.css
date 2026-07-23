@@ -631,6 +631,85 @@ a { color: inherit; text-decoration: none; }
   border-radius: 50%; background: var(--accent);
 }
 
+/* ---- Hero trust indicator ---- */
+.hero-stat-container {
+  position: absolute;
+  z-index: 10;
+  height: clamp(440px, 58vw, 1040px);
+  width: auto;
+  aspect-ratio: 1152 / 1488;
+  right: clamp(-200px, -9vw, -80px);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.hero-stat {
+  position: absolute;
+ left: 40%;
+  top: 56%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.hero-stat-num {
+  font-size: clamp(2.3rem, 1.8rem + 1vw, 3.8rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+
+.hero-stat-label {
+  font-family: "Geist Mono", monospace;
+  font-size: clamp(0.55rem, 0.5rem + 0.1vw, 0.72rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  max-width: 22ch;
+  line-height: 1.3;
+}
+
+@media (min-width: 1600px) {
+  .hero-stat-container {
+    height: clamp(720px, 46vw, 1320px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-stat-container {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    height: auto;
+    width: auto;
+    aspect-ratio: auto;
+    margin-top: 3.5rem;
+  }
+  .hero-stat {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    text-align: left;
+  }
+  .hero-stat-num {
+    font-size: clamp(3.5rem, 2.5rem + 5vw, 4.5rem);
+  }
+  .hero-stat-label {
+    font-size: var(--fs-caption);
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+    max-width: 27ch;
+  }
+}
+
 /* Hero Trust Badges — Government registrations in hero -------------------- */
 .hero-trust {
   display: flex;

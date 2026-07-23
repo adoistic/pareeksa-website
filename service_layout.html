@@ -1,0 +1,933 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>Service Title — Page Template — Pareeksa Technologies</title>
+<meta name="description" content="Visual template layout for Pareeksa Technologies service pages.">
+<link rel="canonical" href="https://pareeksa.com/service_layout.html">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Pareeksa Technologies">
+<meta name="theme-color" content="#F7F8FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E0F13" media="(prefers-color-scheme: dark)">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pareeksa Technologies">
+<meta property="og:title" content="Service Title — Pareeksa Technologies">
+<meta property="og:description" content="Visual template layout for Pareeksa Technologies service pages.">
+<meta property="og:url" content="https://pareeksa.com/service_layout.html">
+<meta property="og:locale" content="en_IN">
+<meta property="og:image" content="https://pareeksa.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Service Title — Pareeksa Technologies">
+<meta name="twitter:description" content="Visual template layout for Pareeksa Technologies service pages.">
+<meta name="twitter:image" content="https://pareeksa.com/assets/og-image.png">
+
+<!-- Icons & manifest -->
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- Fonts: self-hosted, preloaded -->
+<link rel="preload" href="fonts/Geist-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/GeistMono-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="services.css">
+<style>
+  /* Local styles for service_layout.html capabilities directory */
+  
+  /* Hero Section Alignment */
+  .page-hero {
+    background: var(--surface);
+    border-bottom: 1px solid var(--hairline);
+  }
+  
+  .page-hero .wrap {
+    padding-top: clamp(3.5rem, 2.5rem + 5vw, 6.5rem);
+    padding-bottom: clamp(3rem, 2rem + 4vw, 5.5rem);
+  }
+
+  .page-hero-inner h1 {
+    font-size: var(--fs-h2);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+
+  .page-hero-inner .page-lead {
+    margin-top: 1.2rem;
+    max-width: 44rem;
+  }
+
+  .page-hero-inner .hero-actions {
+    margin-top: 2.2rem;
+  }
+
+  /* Page Hero Logo/Badge */
+  .page-hero-top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+ .page-hero-ico{
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:color-mix(in srgb, var(--accent) 10%, var(--surface));
+    border:1px solid color-mix(in srgb, var(--accent) 20%, var(--hairline));
+    border-radius:10px;
+    color:var(--accent);
+    overflow:hidden;
+}
+
+.page-hero-ico svg{
+    width:22px;
+    height:22px;
+    display:block;
+}
+
+  .page-hero-serial {
+    font-family: "Geist Mono", monospace;
+    font-size: var(--fs-caption);
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Responsive Spacing & Container alignment */
+  .section-head {
+    max-width: 44rem;
+    margin-bottom: clamp(2rem, 1.2rem + 2.4vw, 3.5rem);
+  }
+
+  /* Card and Grid Rules */
+  .grid-4-col {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1rem, .6rem + 1vw, 1.5rem);
+  }
+
+  .grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1rem, .6rem + 1vw, 1.5rem);
+  }
+
+  .grid-5-col {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: clamp(1rem, .6rem + 1vw, 1.5rem);
+  }
+
+  /* Stretched card heights and contents */
+  .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card .card-body {
+    flex-grow: 1;
+    margin-top: 0.65rem;
+  }
+
+  /* Custom card icon styles */
+  .card .val-icon {
+    margin-bottom: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .card .card-title {
+    margin-top: 0;
+    line-height: 1.2;
+  }
+
+  .card .card-go {
+    margin: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  /* Illustrated cards alignment & cropping fixes */
+  .card-illustrated {
+    padding: 0 !important;
+    overflow: hidden;
+  }
+
+  .card-illustration-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    padding: 0.25rem; /* added small padding to prevent edge touching */
+    overflow: hidden;
+    background: color-mix(in srgb, var(--muted) 4%, var(--bg));
+    border-bottom: 1px solid var(--hairline);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .card-illustration {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* changed from cover to contain to prevent zoom/crop */
+    object-position: center; /* keep centered */
+  }
+
+  [data-theme="dark"] .card-illustration {
+    mix-blend-mode: normal;
+    opacity: 0.9;
+  }
+
+  .card-illustrated .card-title {
+    margin-top: 1.15rem;
+    padding-inline: 1.5rem;
+  }
+
+  .card-illustrated .card-body {
+    margin-top: 0.35rem; /* reduced from 0.6rem to make card content slightly more compact */
+    padding-inline: 1.5rem;
+    padding-bottom: 1.5rem; /* reduced from 1.75rem */
+  }
+
+  /* SVG Illustration style rules */
+  .card-illustration-svg {
+    width: 100%;
+    height: 100%;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--muted) 4%, var(--bg));
+    display: block;
+  }
+
+  .card-illustration-svg .bg-shape {
+    fill: color-mix(in srgb, var(--accent) 6%, transparent);
+    stroke: color-mix(in srgb, var(--accent) 15%, transparent);
+    stroke-width: 1px;
+  }
+
+  .card-illustration-svg .stroke-accent {
+    stroke: var(--accent);
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+
+  .card-illustration-svg .stroke-muted {
+    stroke: var(--muted);
+    stroke-width: 1.5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    opacity: 0.55;
+  }
+
+  .card-illustration-svg .fill-accent {
+    fill: var(--accent);
+  }
+
+  /* Grid media query breakpoints */
+  @media (max-width: 1200px) {
+    .grid-5-col {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 960px) {
+    .grid-4-col {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .grid-3-col {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .grid-5-col {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 600px) {
+    .grid-4-col {
+      grid-template-columns: 1fr;
+    }
+    .grid-3-col {
+      grid-template-columns: 1fr;
+    }
+    .grid-5-col {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<!-- Set theme before paint to avoid a flash -->
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t !== 'light' && t !== 'dark') {
+        t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+    document.documentElement.classList.add('js');
+  })();
+</script>
+
+<script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg width="0" height="0" class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="nib" viewBox="448 280 1152 1488">
+    <path fill="currentColor" d="M 1070.65 328.425 C 1107.82 342.689 1109.87 370.358 1119.09 404.773 C 1124.88 427.193 1131.17 449.485 1137.93 471.632 C 1158.86 536.275 1184.62 599.253 1214.99 660.032 C 1281.84 791.541 1377.02 921.969 1489.9 1017.78 C 1503.68 1030.02 1523.76 1041.81 1535.28 1055.41 C 1550.67 1073.62 1555.72 1098.41 1548.66 1121.19 C 1543.15 1138.99 1522.01 1166.31 1511.08 1183.56 C 1497.13 1205.93 1483.83 1228.69 1471.19 1251.83 C 1408.52 1366.07 1367.16 1490.78 1349.16 1619.84 C 1344.12 1656.48 1342.81 1683.93 1339.88 1719.96 L 708.518 1719.93 C 696.003 1516.58 637.673 1332.38 523.554 1162.75 C 507.993 1139.62 493.317 1122.24 496.728 1091.96 C 501.662 1048.15 545.063 1033.91 572.219 1005.91 C 722.235 872.725 830.471 696.263 897.771 509.854 C 908.918 478.32 918.812 446.358 927.431 414.041 C 937.524 377.171 937.935 345.895 976.893 328.938 C 978.242 333.249 977.626 368.169 977.615 375.245 L 977.514 479.128 L 977.487 836 C 977.477 901.161 976.744 967.872 977.704 1032.92 C 972.699 1034.83 967.739 1036.86 962.828 1039 C 923.759 1055.86 893.205 1087.86 878.159 1127.66 C 863.396 1166.56 864.658 1209.73 881.667 1247.7 C 912.303 1315.89 992.103 1356.3 1064.85 1334.78 C 1214.7 1290.45 1220.16 1085.64 1070.58 1033.19 C 1069.06 999.571 1070.29 956.216 1070.29 921.653 L 1070.32 704.865 L 1070.25 460.184 C 1070.24 418.19 1069.16 370.117 1070.65 328.425 z"/>
+  </symbol>
+  <symbol id="wa" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/>
+  </symbol>
+  <symbol id="arrow" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/>
+  </symbol>
+
+  <!-- Service line-icons -->
+  <symbol id="ic-omr" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2" pathLength="1"/><circle cx="9" cy="8.5" r="1.3" pathLength="1"/><circle cx="9" cy="13.5" r="1.3" pathLength="1"/><path d="M12.5 8.5H16M12.5 13.5H16" pathLength="1"/></symbol>
+  <symbol id="ic-osm" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2" pathLength="1"/><path d="M8.4 10.6l2.4 2.4 4.8-4.9" pathLength="1"/><path d="M9.5 20.5h5M12 17v3.5" pathLength="1"/></symbol>
+  <symbol id="ic-online" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" pathLength="1"/><path d="M3 8.5h18" pathLength="1"/><circle cx="12" cy="14.5" r="3" pathLength="1"/><path d="M12 13v1.6l1.1.9" pathLength="1"/></symbol>
+  <symbol id="ic-prepost" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="16.5" rx="2" pathLength="1"/><rect x="9" y="2.6" width="6" height="3.6" rx="1.2" pathLength="1"/><path d="M8.5 11l1.3 1.3 2.4-2.6M8.5 16l1.3 1.3 2.4-2.6" pathLength="1"/></symbol>
+  <symbol id="ic-ocr" viewBox="0 0 24 24"><path d="M14 3H7v18h10V7z" pathLength="1"/><path d="M14 3v4h3" pathLength="1"/><path d="M9.5 12h5M9.5 15h5M9.5 18h3" pathLength="1"/></symbol>
+  <symbol id="ic-icr" viewBox="0 0 24 24"><path d="M4 17.5c1.4-7.5 3.6-7.5 4.8-1.6M5 13.7h4.3" pathLength="1"/><path d="M13.6 14.6l5-5 2.2 2.2-5 5-2.9.7z" pathLength="1"/></symbol>
+  <symbol id="ic-scan" viewBox="0 0 24 24"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16" pathLength="1"/><path d="M4 12h16" pathLength="1"/></symbol>
+  <symbol id="ic-dms" viewBox="0 0 24 24"><path d="M9 4h6l4 4v10H9z" pathLength="1"/><path d="M15 4v4h4" pathLength="1"/><path d="M9 8H5v12h10v-2" pathLength="1"/></symbol>
+  <symbol id="ic-print" viewBox="0 0 24 24"><path d="M7 9V4h10v5" pathLength="1"/><path d="M7 18H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2" pathLength="1"/><rect x="7" y="15" width="10" height="6" rx="1" pathLength="1"/></symbol>
+  <symbol id="ic-portals" viewBox="0 0 24 24"><rect x="3" y="4" width="13" height="11" rx="2" pathLength="1"/><path d="M3 8h13" pathLength="1"/><rect x="13.5" y="10.5" width="7.5" height="10.5" rx="1.6" pathLength="1"/></symbol>
+  <symbol id="ic-ai" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2" pathLength="1"/><circle cx="12" cy="12" r="2" pathLength="1"/><path d="M12 7V4.5M12 19.5V17M7 12H4.5M19.5 12H17" pathLength="1"/></symbol>
+  <symbol id="ic-voice" viewBox="0 0 24 24"><path d="M5 13v-1.5a7 7 0 0 1 14 0V13" pathLength="1"/><rect x="3" y="13" width="4" height="6" rx="1.8" pathLength="1"/><rect x="17" y="13" width="4" height="6" rx="1.8" pathLength="1"/><path d="M19 19v.4a3 3 0 0 1-3 3h-2.5" pathLength="1"/></symbol>
+  <symbol id="ic-security" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.2c0 4.6-3.2 7.8-7.5 9.3-4.3-1.5-7.5-4.7-7.5-9.3V6z" pathLength="1"/><path d="M9 12l2.2 2.2 4-4.4" pathLength="1"/></symbol>
+  <symbol id="ic-translation" viewBox="0 0 24 24"><path d="M3 5.5h10v7H7.5L4.5 15v-2.5H3z" pathLength="1"/><path d="M11 11.5h10v7h-2.5L15.5 21v-2.5H11z" pathLength="1"/></symbol>
+</svg>
+
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="lockup" href="index.html" aria-label="Pareeksa Technologies — home">
+      <svg class="lockup-mark" aria-hidden="true"><use href="#nib"/></svg>
+      <span class="lockup-word">Pareeksa</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <div class="nav-dropdown">
+        <a href="#" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          Capabilities <span class="nav-arrow"></span>
+        </a>
+        <div class="nav-dropdown-menu nav-mega-menu">
+          <div class="nav-mega-column">
+            <h4 class="nav-mega-title">Examinations</h4>
+            <a href="omr.html">OMR Software &amp; Services</a>
+            <a href="osm.html">On-screen Marking</a>
+            <a href="online-examination.html">Online Examination</a>
+            <a href="pre-post-examination.html">Pre &amp; Post Examination</a>
+          </div>
+          <div class="nav-mega-column">
+            <h4 class="nav-mega-title">Document Intelligence</h4>
+            <a href="ocr.html">OCR</a>
+            <a href="icr.html">ICR</a>
+            <a href="document-scanning.html">Document Scanning</a>
+            <a href="document-management.html">Document Management</a>
+            <a href="printing.html">Printing</a>
+            <a href="ai-examination.html">AI-driven Examination &amp; Document Solutions</a>
+          </div>
+          <div class="nav-mega-column">
+            <h4 class="nav-mega-title">Digital Engineering</h4>
+            <a href="custom-portals.html">Custom Portals</a>
+            <a href="high-performance-platforms.html">High Performance Platforms &amp; Applications</a>
+            <a href="cloud-devops.html">Cloud &amp; DevOps</a>
+            <a href="app-security.html">App Security Testing</a>
+            <a href="internet-of-things.html">Internet of Things (IoT)</a>
+          </div>
+          <div class="nav-mega-column">
+            <h4 class="nav-mega-title">AI &amp; Intelligent Systems</h4>
+            <a href="artificial-intelligence.html">Artificial Intelligence</a>
+            <a href="ai-modules.html">AI Modules</a>
+            <a href="agentic-ai.html">Agentic AI Voice Calls</a>
+            <a href="translation.html">Translation</a>
+            <a href="blockchain-identity.html">Blockchain &amp; Identity</a>
+            <a href="data-analytics.html">Data Analytics</a>
+          </div>
+          <div class="nav-mega-column">
+            <h4 class="nav-mega-title">Emerging Technologies</h4>
+            <a href="drones-uavs.html">Drones &amp; UAVs</a>
+            <a href="robotics-systems.html">Robotics &amp; Systems</a>
+            <a href="solar-energy.html">Solar &amp; Energy</a>
+            <a href="tech-skilling.html">Tech Skilling</a>
+          </div>
+        </div>
+      </div>
+      <a href="service_layout.html">Service</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch theme">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.5v2.6M12 18.9v2.6M21.5 12h-2.6M5.1 12H2.5M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8M18.4 18.4l-1.8-1.8M7.4 7.4 5.6 5.6"/></g></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 14.2A8.2 8.2 0 0 1 9.8 3.5a.7.7 0 0 0-.93-.84 extinctionA9.6 9.6 0 1 0 21.34 15.1a.7.7 0 0 0-.84-.92Z"/></svg>
+      </button>
+      <a class="btn btn-primary header-cta" href="https://wa.me/919999026602" target="_blank" rel="noopener">
+        <svg class="btn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>
+        <span>WhatsApp</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+    <div class="mobile-dropdown">
+      <button class="mobile-dropdown-trigger" type="button" aria-expanded="false">
+        Capabilities <span class="nav-arrow"></span>
+      </button>
+      <div class="mobile-dropdown-menu mobile-mega-menu">
+        <div class="mobile-mega-section">
+          <h4 class="mobile-mega-title">Examinations</h4>
+          <a href="omr.html">OMR Software &amp; Services</a>
+          <a href="osm.html">On-screen Marking</a>
+          <a href="online-examination.html">Online Examination</a>
+          <a href="pre-post-examination.html">Pre &amp; Post Examination</a>
+        </div>
+        <div class="mobile-mega-section">
+          <h4 class="mobile-mega-title">Document Intelligence</h4>
+          <a href="ocr.html">OCR</a>
+          <a href="icr.html">ICR</a>
+          <a href="document-scanning.html">Document Scanning</a>
+          <a href="document-management.html">Document Management</a>
+          <a href="printing.html">Printing</a>
+          <a href="ai-examination.html">AI-driven Examination &amp; Document Solutions</a>
+        </div>
+        <div class="mobile-mega-section">
+          <h4 class="mobile-mega-title">Digital Engineering</h4>
+          <a href="custom-portals.html">Custom Portals</a>
+          <a href="high-performance-platforms.html">High Performance Platforms &amp; Applications</a>
+          <a href="cloud-devops.html">Cloud &amp; DevOps</a>
+          <a href="app-security.html">App Security Testing</a>
+          <a href="internet-of-things.html">Internet of Things (IoT)</a>
+        </div>
+        <div class="mobile-mega-section">
+          <h4 class="mobile-mega-title">AI &amp; Intelligent Systems</h4>
+          <a href="artificial-intelligence.html">Artificial Intelligence</a>
+          <a href="ai-modules.html">AI Modules</a>
+          <a href="agentic-ai.html">Agentic AI Voice Calls</a>
+          <a href="translation.html">Translation</a>
+          <a href="blockchain-identity.html">Blockchain &amp; Identity</a>
+          <a href="data-analytics.html">Data Analytics</a>
+        </div>
+        <div class="mobile-mega-section">
+          <h4 class="mobile-mega-title">Emerging Technologies</h4>
+          <a href="drones-uavs.html">Drones &amp; UAVs</a>
+          <a href="robotics-systems.html">Robotics &amp; Systems</a>
+          <a href="solar-energy.html">Solar &amp; Energy</a>
+          <a href="tech-skilling.html">Tech Skilling</a>
+        </div>
+      </div>
+    </div>
+    <a href="service_layout.html">Service</a>
+    <a href="index.html#contact">Contact</a>
+    <a class="mobile-cta" href="https://wa.me/919999026602" target="_blank" rel="noopener">Message on WhatsApp</a>
+  </nav>
+</header>
+
+<main id="main">
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <svg class="page-hero-mark" aria-hidden="true"><use href="#nib"/></svg>
+    <div class="wrap">
+      <div class="page-hero-inner">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span class="sep">/</span>Service
+          <span aria-current="page"></span>
+        </nav>
+       <div class="page-hero-top">
+    <span class="page-hero-ico">
+        <svg aria-hidden="true">
+            <use href="#nib"></use>
+        </svg>
+    </span>
+    <span class="page-hero-serial">SERVICES</span>
+</div>
+        <h1>Services </h1>
+        <p class="page-lead">Pareeksa delivers secure, technology-driven examination and high-volume document management solutions for institutions. From OMR scanning and on-screen marking to intelligent character recognition (ICR), we streamline complex workflows with complete accuracy and auditability.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/919999026602" target="_blank" rel="noopener">
+            <svg class="btn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>
+            <span>Talk to us about this</span>
+          </a>
+          <a class="btn btn-ghost" href="#contact">
+            <span>Request details</span>
+            <svg class="btn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXAMINATIONS -->
+  <section class="section" id="examinations" aria-labelledby="exam-heading">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <span class="eyebrow">Core Assessment</span>
+        <h2 class="section-title" id="exam-heading">Examinations</h2>
+        <p class="section-lead">Manage every stage of the assessment lifecycle with absolute integrity. From OMR sheet processing and digital evaluation to secure online testing and complete pre and post exam logistics.</p>
+      </header>
+      
+      <div class="grid-4-col">
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/omr_illustration.svg" alt="Optimal Mark Recognition (OMR) illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="omr.html">Optimal Mark Recognition (OMR)</a></h3>
+          <p class="card-body">Streamline examinations with high-speed scanning and intelligent data capture. Ensure precise evaluation, faster result generation, and reliable exam workflows.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+
+         <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/osm_illustration.svg" alt="On-Screen Marking (OSM) illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="osm.html">On-Screen Marking (OSM)</a></h3>
+          <p class="card-body">Evaluate answer scripts digitally with a secure, paperless marking system. Improve accuracy, reduce evaluation time, and ensure complete transparency throughout the assessment process.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+
+         <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/online_examination_illustration.svg" alt="Online Examination illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="online-examination.html">Online Examination</a></h3>
+          <p class="card-body">Conduct secure online assessments with real-time monitoring, automated workflows, and scalable infrastructure. Deliver a seamless testing experience with reliable performance and instant result processing.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+
+         <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/pre_post_examination_illustration.svg" alt="Pre & Post Examination illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="pre-post-examination.html">Pre &amp; Post Examination</a></h3>
+          <p class="card-body">Manage every stage of the examination lifecycle—from registration, hall tickets, and logistics to result processing, analytics, and certificate generation—with accuracy and efficiency.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCUMENT INTELLIGENCE -->
+  <section class="section section-alt" id="document-intelligence" aria-labelledby="doc-heading">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <span class="eyebrow">Enterprise Data</span>
+        <h2 class="section-title" id="doc-heading">Document Intelligence</h2>
+        <p class="section-lead">Convert physical archives and high-volume paperwork into reliable, structured digital assets. We customize machine learning models and pipelines to match your specific institutional records.</p>
+      </header>
+
+      <div class="grid-3-col">
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/ocr_illustration.svg" alt="OCR illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="ocr.html">OCR</a></h3>
+          <p class="card-body">Convert scanned paper documents and image-only PDFs into searchable, editable digital files with model training customized for your records.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/icr_illustration.svg" alt="ICR illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="icr.html">ICR</a></h3>
+          <p class="card-body">Extract handwritten character fields from application boxes automatically, returning confidence scores so human review is only needed when doubtful.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/document_scanning_illustration.svg" alt="Document Scanning illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="document-scanning.html">Document Scanning</a></h3>
+          <p class="card-body">Scan high volumes of files, books, and registers securely on-site or off-site to produce clean, well-indexed digital archives.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/document_management_illustration.svg" alt="Document Management illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="document-management.html">Document Management</a></h3>
+          <p class="card-body">Organize and secure corporate files with structured version history, access permissions, retention policies, and enterprise-grade full-text search.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/printing_illustration.svg" alt="Printing illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="printing.html">Printing</a></h3>
+          <p class="card-body">Produce secure, high-quality examination papers under controlled environments along with certificates, mark sheets, and variable data runs.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/ai_exam_illustration.svg" alt="AI-driven Examination &amp; Document Solutions illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="ai-examination.html">AI-driven Examination &amp; Document Solutions</a></h3>
+          <p class="card-body">Deploy task-scoped AI models for intelligent archive search, automated evaluation, and secure remote examination proctoring.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIGITAL ENGINEERING -->
+  <section class="section" id="digital-engineering" aria-labelledby="eng-heading">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <span class="eyebrow">Robust Infrastructure</span>
+        <h2 class="section-title" id="eng-heading">Digital Engineering</h2>
+        <p class="section-lead">Deploy high-performance web applications, candidate management portals, and cloud integrations engineered for extreme traffic spikes, zero downtime, and complete security.</p>
+      </header>
+
+      <div class="grid-5-col">
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/custom_portals_illustration.svg" alt="Custom Portals illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="custom-portals.html">Custom Portals</a></h3>
+          <p class="card-body">Build tailored web and mobile applications, candidate enrollment dashboards, and management portals designed for your exact organizational workflows.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/platforms_illustration.svg" alt="High Performance Platforms &amp; Applications illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="high-performance-platforms.html">High Performance Platforms &amp; Applications</a></h3>
+          <p class="card-body">Engineer resilient microservices and low-latency distributed systems capable of handling extreme spikes in candidate traffic and database queries.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/cloud_devops_illustration.svg" alt="Cloud &amp; DevOps illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="cloud-devops.html">Cloud &amp; DevOps</a></h3>
+          <p class="card-body">Deploy robust cloud infrastructure with Infrastructure as Code (IaC), continuous integration/deployment (CI/CD) pipelines, and real-time telemetry.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/app_security_illustration.svg" alt="App Security Testing illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="app-security.html">App Security Testing</a></h3>
+          <p class="card-body">Perform comprehensive penetration testing to uncover application vulnerabilities with reproducible proofs-of-concept and detailed remediation guides.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/iot_illustration.svg" alt="Internet of Things (IoT) illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="internet-of-things.html">Internet of Things (IoT)</a></h3>
+          <p class="card-body">Connect physical hardware with digital dashboards using smart sensor networks, real-time edge telemetry, and centralized monitoring stations.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI & INTELLIGENT SYSTEMS -->
+  <section class="section section-alt" id="ai-intelligent-systems" aria-labelledby="ai-heading">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <span class="eyebrow">Cognitive Automation</span>
+        <h2 class="section-title" id="ai-heading">AI &amp; Intelligent Systems</h2>
+        <p class="section-lead">Integrate task-scoped machine learning models, real-time agentic voice assistants, and secure digital credential verifications built to automate operations without losing human oversight.</p>
+      </header>
+
+      <div class="grid-3-col">
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/artificial_intelligence_illustration.svg" alt="Artificial Intelligence illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="artificial-intelligence.html">Artificial Intelligence</a></h3>
+          <p class="card-body">Design and deploy custom machine learning algorithms and prediction models tailored to solve complex operational challenges.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/ai_modules_illustration.svg" alt="AI Modules illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="ai-modules.html">AI Modules</a></h3>
+          <p class="card-body">Integrate specialized AI assistants for automated document summarization, intelligent information retrieval, and workflow scripting.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/agentic_ai_illustration.svg" alt="Agentic AI Voice Calls illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="agentic-ai.html">Agentic AI Voice Calls</a></h3>
+          <p class="card-body">Deploy human-like conversational voice agents that handle candidate inquiries, answer FAQ questions, and route calls based on context.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/translation_illustration.svg" alt="Translation illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="translation.html">Translation</a></h3>
+          <p class="card-body">Translate complex administrative documents, test papers, and instruction sets accurately between languages while preserving original intent.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/blockchain_identity_illustration.svg" alt="Blockchain &amp; Identity illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="blockchain-identity.html">Blockchain &amp; Identity</a></h3>
+          <p class="card-body">Issue tamper-proof digital credentials, academic certificates, and secure decentralized identity verifications using blockchain technology.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/data_analytics_illustration.svg" alt="Data Analytics illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="data-analytics.html">Data Analytics</a></h3>
+          <p class="card-body">Transform raw organizational records and candidate data into interactive visualizations, performance trends, and predictive business insights.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMERGING TECHNOLOGIES -->
+  <section class="section" id="emerging-technologies" aria-labelledby="em-heading">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <span class="eyebrow">Next-Gen Systems</span>
+        <h2 class="section-title" id="em-heading">Emerging Technologies</h2>
+        <p class="section-lead">Prepare your organization for the future with advanced technology integrations. From autonomous drone mapping and robotic sorting systems to smart energy grids and tech skilling.</p>
+      </header>
+
+      <div class="grid-4-col">
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/drones_uavs_illustration.svg" alt="Drones &amp; UAVs illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="drones-uavs.html">Drones &amp; UAVs</a></h3>
+          <p class="card-body">Deploy autonomous aerial systems for surveillance, spatial mapping, and secure payload delivery with integrated ground control software.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/robotics_systems_illustration.svg" alt="Robotics &amp; Systems illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="robotics-systems.html">Robotics &amp; Systems</a></h3>
+          <p class="card-body">Automate repetitive labor and sorting processes with custom robotic arms, motion planning, and intelligent computer vision guidance.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/solar_energy_illustration.svg" alt="Solar &amp; Energy illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="solar-energy.html">Solar &amp; Energy</a></h3>
+          <p class="card-body">Design and integrate smart solar energy grids, monitoring power efficiency, battery storage, and institutional electrical distribution.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+
+        <article class="card card-illustrated reveal">
+          <div class="card-illustration-wrap">
+            <img src="assets/images/services/tech_skilling_illustration.svg" alt="Tech Skilling illustration" class="card-illustration">
+          </div>
+          <h3 class="card-title"><a class="card-link" href="tech-skilling.html">Tech Skilling</a></h3>
+          <p class="card-body">Deliver curriculum planning, interactive labs, and practical training programs in cloud architecture, cyber security, and machine learning.</p>
+          <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section-alt" id="contact" aria-labelledby="contact-h">
+    <div class="wrap contact-grid">
+      <div class="contact-intro">
+        <p class="eyebrow reveal">Contact</p>
+        <h2 class="section-title reveal" id="contact-h">Tell us what you need</h2>
+        <p class="section-lead reveal">Message us on WhatsApp or send an email. Tell us the job — examinations, documents, an app, or an AI task — and we will reply with who is right for it and what happens next.</p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="https://wa.me/919999026602" target="_blank" rel="noopener">
+            <svg class="btn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>
+            <span>Message on WhatsApp</span>
+          </a>
+          <a class="btn btn-secondary" href="mailto:corp@pareeksa.com">
+            <span class="mono">corp@<wbr>pareeksa.com</span>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-card contact-form reveal" action="https://api.web3forms.com/submit" method="POST" aria-label="Contact form">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        <div class="contact-form__row">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-name">Name</label>
+            <input class="contact-form__input" type="text" id="contact-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-phone">Mobile Number</label>
+            <input class="contact-form__input" type="tel" id="contact-phone" name="phone" placeholder="+91 " required>
+          </div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-email">Email Address</label>
+            <input class="contact-form__input" type="email" id="contact-email" name="email" placeholder="your.email@example.com" required>
+          </div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-org">Institute / Organization Name</label>
+            <input class="contact-form__input" type="text" id="contact-org" name="organization" placeholder="Your institute or organization">
+          </div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-message">Message</label>
+            <textarea class="contact-form__textarea" id="contact-message" name="message" rows="5" placeholder="How can we help?"></textarea>
+          </div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <div class="contact-form__alert contact-form__alert--success" hidden></div>
+          <div class="contact-form__alert contact-form__alert--error" hidden></div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <button type="submit" class="btn btn-primary contact-form__submit">
+            <span>Request a Demo</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <a class="lockup lockup-stacked" href="index.html" aria-label="Pareeksa Technologies — home">
+        <svg class="lockup-mark" aria-hidden="true"><use href="#nib"/></svg>
+        <span class="lockup-word">Pareeksa</span>
+      </a>
+      <p class="footer-tag mono">The exam, examined.</p>
+      <div class="footer-creds">
+    <span class="footer-creds-label">Registered<br>With</span>
+
+    <span class="cred">
+        <img src="assets/badges/gem.png"
+             alt="Registered on GeM">
+    </span>
+
+    <span class="cred">
+        <img src="Importance-1-e1536998812445.png"
+             alt="MSME Registered">
+    </span>
+</div>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <h2 class="footer-h">Services</h2>
+      <a href="index.html#examinations">Examinations</a>
+      <a href="index.html#capabilities">Capabilities</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="brand.html">Brand</a>
+    </nav>
+    <div class="footer-contact">
+      <h2 class="footer-h">Reach us</h2>
+      <a href="https://wa.me/919999026602" target="_blank" rel="noopener" class="mono">+91 99990 26602</a>
+      <a href="mailto:corp@pareeksa.com" class="mono">corp@<wbr>pareeksa.com</a>
+      <address class="footer-address">New Delhi – 110059, India</address>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <p>© <span id="year">2026</span> Pareeksa Technologies</p>
+    <p class="mono footer-gst">GST 07ECOPS6433P1ZL</p>
+  </div>
+</footer>
+
+<button type="button" class="demo-float" aria-label="Request a demo">
+  <span>Request a Demo</span>
+</button>
+<a class="wa-float" href="https://wa.me/919999026602" target="_blank" rel="noopener" aria-label="Message Pareeksa on WhatsApp" title="Message us on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>
+</a>
+
+<!-- Demo Modal -->
+<div id="demo-modal" class="modal" aria-hidden="true">
+  <div class="modal__overlay" tabindex="-1"></div>
+  <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button type="button" class="modal__close" aria-label="Close modal">&times;</button>
+    <div class="modal__content">
+      <h2 id="modal-title" class="modal__title">Request a Demo</h2>
+      <p class="modal__lead">Fill out the details below, and we will get back to you to schedule a live demo.</p>
+      
+      <form class="contact-form modal-form" action="https://api.web3forms.com/submit" method="POST" aria-label="Request a demo form">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        <div class="contact-form__row">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="modal-name">Name</label>
+            <input class="contact-form__input" type="text" id="modal-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="modal-phone">Mobile Number</label>
+            <input class="contact-form__input" type="tel" id="modal-phone" name="phone" placeholder="+91 " required>
+          </div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="modal-email">Email Address</label>
+            <input class="contact-form__input" type="email" id="modal-email" name="email" placeholder="your.email@example.com" required>
+          </div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="modal-org">Institute / Organization Name</label>
+            <input class="contact-form__input" type="text" id="modal-org" name="organization" placeholder="Your institute or organization">
+          </div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="modal-message">Message</label>
+            <textarea class="contact-form__textarea" id="modal-message" name="message" rows="4" placeholder="How can we help?"></textarea>
+          </div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <div class="contact-form__alert contact-form__alert--success" hidden></div>
+          <div class="contact-form__alert contact-form__alert--error" hidden></div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <button type="submit" class="btn btn-primary contact-form__submit">
+            <span>Request a Demo</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

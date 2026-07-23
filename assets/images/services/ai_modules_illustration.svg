@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 90" width="100%" height="100%">
+  <defs><style>
+    .bg-blob { fill: #EEF2FF; opacity: 0.85; }
+    .bg-blob-2 { fill: #E0E7FF; opacity: 0.6; }
+    .outline { stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .outline-thick { stroke: #16181D; stroke-width: 2.2px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .outline-thin { stroke: #16181D; stroke-width: 1px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .skin { fill: #FED7AA; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .hair { fill: #334155; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .shirt { fill: #1D4ED8; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .pants { fill: #475569; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .accent-fill { fill: #1D4ED8; }
+    .accent-stroke { stroke: #1D4ED8; stroke-width: 2px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .pastel-blue { fill: #EEF2FF; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .pastel-yellow { fill: #FEF9C3; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .pastel-green { fill: #D1FAE5; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .white-card { fill: #FFFFFF; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .shadow-line { stroke: #626875; stroke-width: 1px; stroke-linecap: round; opacity: 0.35; }
+    .sparkle { fill: #F59E0B; }
+    .plant { fill: #34D399; stroke: #16181D; stroke-width: 1.25px; }
+</style></defs>
+  <circle cx="80" cy="45" r="34" class="bg-circle" />
+  
+  <!-- Doc and summary balloon -->
+  <rect x="35" y="24" width="35" height="46" rx="1.5" class="white-card" />
+  <line x1="42" y1="34" x2="62" y2="34" class="outline-thin" opacity="0.3" />
+  <line x1="42" y1="42" x2="62" y2="42" class="outline-thin" opacity="0.3" />
+  
+  <path d="M84 28 h32 a2 2 0 0 1 2 2 v16 a2 2 0 0 1 -2 2 H94 l-6 6 V50 h-4 a2 2 0 0 1 -2 -2 V30 a2 2 0 0 1 2 -2 z" class="white-card" stroke="#1D4ED8" stroke-width="1.75" />
+  <path d="M96 35 l1.5 2.5 l2.5 1.5 l-2.5 1.5 l-1.5 2.5 L94.5 40.5 L92 39 L94.5 37.5 Z" class="sparkle" />
+
+  <!-- Character reviewing summary -->
+  <path d="M125 58 c0 -8 12 -8 12 0 v14 h-12 Z" class="pants" />
+  <circle cx="131" cy="48" r="5.5" class="skin" />
+</svg>

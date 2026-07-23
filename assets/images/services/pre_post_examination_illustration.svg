@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 90" width="100%" height="100%">
+  <defs><style>
+    .bg-blob { fill: #EEF2FF; opacity: 0.85; }
+    .bg-blob-2 { fill: #E0E7FF; opacity: 0.6; }
+    .outline { stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .outline-thick { stroke: #16181D; stroke-width: 2.2px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .outline-thin { stroke: #16181D; stroke-width: 1px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .skin { fill: #FED7AA; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .hair { fill: #334155; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .shirt { fill: #1D4ED8; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .pants { fill: #475569; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .accent-fill { fill: #1D4ED8; }
+    .accent-stroke { stroke: #1D4ED8; stroke-width: 2px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .pastel-blue { fill: #EEF2FF; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .pastel-yellow { fill: #FEF9C3; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .pastel-green { fill: #D1FAE5; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .white-card { fill: #FFFFFF; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .shadow-line { stroke: #626875; stroke-width: 1px; stroke-linecap: round; opacity: 0.35; }
+    .sparkle { fill: #F59E0B; }
+    .plant { fill: #34D399; stroke: #16181D; stroke-width: 1.25px; }
+</style></defs>
+  <path d="M40 30 C20 15, 60 5, 100 12 C140 20, 145 45, 135 60 C125 75, 75 70, 40 60 Z" class="bg-blob-2" />
+  <line x1="20" y1="75" x2="140" y2="75" class="shadow-line" />
+  
+  <!-- Calendar / schedule board -->
+  <rect x="25" y="22" width="34" height="42" rx="3" class="white-card" />
+  <rect x="30" y="28" width="6" height="6" class="accent-fill" stroke="#16181D" stroke-width="1.25" />
+  <rect x="40" y="28" width="6" height="6" class="outline" />
+  <rect x="30" y="38" width="6" height="6" class="outline" />
+  <rect x="40" y="38" width="6" height="6" class="pastel-yellow" />
+  <rect x="30" y="48" width="16" height="10" class="pastel-blue" />
+  
+  <!-- Floating document sheet -->
+  <rect x="70" y="16" width="22" height="28" rx="1.5" class="white-card" transform="rotate(-8, 81, 30)" />
+  <path d="M78 30 l4 4 l8 -8" class="accent-stroke" style="stroke-width:2;" />
+
+  <!-- Certificate scroll on right -->
+  <rect x="110" y="35" width="25" height="32" rx="2" class="pastel-green" />
+  <circle cx="122" cy="48" r="5" class="pastel-yellow" />
+  <path d="M120 53 l2 4 l2 -4 z" class="pastel-yellow" />
+
+  <!-- Character coordinating workflow -->
+  <circle cx="80" cy="52" r="5.5" class="skin" />
+  <path d="M72 62 c0 -6 16 -6 16 0 v13 H72 Z" class="shirt" />
+  <path d="M76 49 C76 45, 84 45, 84 49 Z" class="hair" />
+  <path d="M80 62 Q70 56 60 52" fill="none" class="outline" style="stroke-width:3; stroke:#FED7AA;" />
+  <path d="M80 62 Q70 56 60 52" fill="none" class="outline" />
+  <path d="M80 62 Q90 56 98 52" fill="none" class="outline" style="stroke-width:3; stroke:#FED7AA;" />
+  <path d="M80 62 Q90 56 98 52" fill="none" class="outline" />
+</svg>

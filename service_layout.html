@@ -40,6 +40,21 @@
 <link rel="preload" href="fonts/GeistMono-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="services.css">
+<!-- Page-specific hero style overrides -->
+<style>
+  .page-hero .hero-mark.page-hero-mark-adapted,
+.page-hero .hero-stat-container.page-hero-stat-adapted {
+    height: 110%;
+     right: clamp(-140px, -5vw, -30px);
+    top: 54%;
+    transform: translateY(-50%);
+  }
+  .page-hero .page-hero-stat-adapted .hero-stat {
+    left: 50%;
+    top: 60%;
+  }
+</style>
+
 <style>
   /* Local styles for service_layout.html capabilities directory */
   
@@ -112,159 +127,80 @@
   }
 
   /* Card and Grid Rules */
-  .grid-4-col {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: clamp(1rem, .6rem + 1vw, 1.5rem);
-  }
-
-  .grid-3-col {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(1rem, .6rem + 1vw, 1.5rem);
-  }
-
+  .grid-3-col,
   .grid-5-col {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: clamp(1rem, .6rem + 1vw, 1.5rem);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1.2rem, 0.8rem + 1.2vw, 1.8rem);
   }
 
-  /* Stretched card heights and contents */
+  .grid-4-col {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.2rem, 0.8rem + 1.2vw, 1.8rem);
+  }
+
+  /* Professional Info Cards styling */
   .card {
     height: 100%;
     display: flex;
     flex-direction: column;
+    padding: clamp(1.6rem, 1.2rem + 1.5vw, 2.4rem); /* Slightly increased internal padding */
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-lg);
+    transition: border-color .2s var(--ease), transform .2s var(--ease), box-shadow .2s var(--ease);
+  }
+
+  .section-alt .card {
+    background: var(--bg);
+  }
+
+  .card .card-title {
+    font-size: var(--fs-h4);
+    font-weight: 700; /* Visually stronger heading */
+    line-height: 1.25;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.015em;
   }
 
   .card .card-body {
     flex-grow: 1;
-    margin-top: 0.65rem;
-  }
-
-  /* Custom card icon styles */
-  .card .val-icon {
-    margin-bottom: 1.25rem;
-    flex-shrink: 0;
-  }
-
-  .card .card-title {
+    color: var(--muted);
+    font-size: var(--fs-small);
+    line-height: 1.65;
     margin-top: 0;
-    line-height: 1.2;
+    margin-bottom: 1.5rem; /* Balanced spacing before action link */
   }
 
   .card .card-go {
-    margin: 1.25rem;
-    flex-shrink: 0;
-  }
-
-  /* Illustrated cards alignment & cropping fixes */
-  .card-illustrated {
-    padding: 0 !important;
-    overflow: hidden;
-  }
-
-  .card-illustration-wrap {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    padding: 0.25rem; /* added small padding to prevent edge touching */
-    overflow: hidden;
-    background: color-mix(in srgb, var(--muted) 4%, var(--bg));
-    border-bottom: 1px solid var(--hairline);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .card-illustration {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* changed from cover to contain to prevent zoom/crop */
-    object-position: center; /* keep centered */
-  }
-
-  [data-theme="dark"] .card-illustration {
-    mix-blend-mode: normal;
-    opacity: 0.9;
-  }
-
-  .card-illustrated .card-title {
-    margin-top: 1.15rem;
-    padding-inline: 1.5rem;
-  }
-
-  .card-illustrated .card-body {
-    margin-top: 0.35rem; /* reduced from 0.6rem to make card content slightly more compact */
-    padding-inline: 1.5rem;
-    padding-bottom: 1.5rem; /* reduced from 1.75rem */
-  }
-
-  /* SVG Illustration style rules */
-  .card-illustration-svg {
-    width: 100%;
-    height: 100%;
+    margin-top: auto;
+    font-family: "Geist Mono", monospace;
+    font-size: var(--fs-caption);
     color: var(--accent);
-    background: color-mix(in srgb, var(--muted) 4%, var(--bg));
-    display: block;
-  }
-
-  .card-illustration-svg .bg-shape {
-    fill: color-mix(in srgb, var(--accent) 6%, transparent);
-    stroke: color-mix(in srgb, var(--accent) 15%, transparent);
-    stroke-width: 1px;
-  }
-
-  .card-illustration-svg .stroke-accent {
-    stroke: var(--accent);
-    stroke-width: 2px;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    fill: none;
-  }
-
-  .card-illustration-svg .stroke-muted {
-    stroke: var(--muted);
-    stroke-width: 1.5px;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    fill: none;
-    opacity: 0.55;
-  }
-
-  .card-illustration-svg .fill-accent {
-    fill: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    letter-spacing: 0.02em;
   }
 
   /* Grid media query breakpoints */
-  @media (max-width: 1200px) {
-    .grid-5-col {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-
   @media (max-width: 960px) {
-    .grid-4-col {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .grid-3-col {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+    .grid-3-col,
+    .grid-4-col,
     .grid-5-col {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(1rem, 0.6rem + 1vw, 1.5rem);
     }
   }
 
   @media (max-width: 600px) {
-    .grid-4-col {
-      grid-template-columns: 1fr;
-    }
-    .grid-3-col {
-      grid-template-columns: 1fr;
-    }
+    .grid-3-col,
+    .grid-4-col,
     .grid-5-col {
       grid-template-columns: 1fr;
+      gap: 1.2rem;
     }
   }
 </style>
@@ -444,7 +380,7 @@
 <main id="main">
   <!-- PAGE HERO -->
   <section class="page-hero">
-    <svg class="page-hero-mark" aria-hidden="true"><use href="#nib"/></svg>
+    <svg class="hero-mark page-hero-mark-adapted" aria-hidden="true"><use href="#nib"/></svg>
     <div class="wrap">
       <div class="page-hero-inner">
         <nav class="crumbs" aria-label="Breadcrumb">
@@ -473,6 +409,12 @@
         </div>
       </div>
     </div>
+      <div class="wrap hero-stat-container page-hero-stat-adapted">
+      <div class="hero-stat reveal">
+        <div class="hero-stat-num">100+</div>
+        <div class="hero-stat-label">Years of<br>Combined Experience</div>
+      </div>
+    </div>
   </section>
 
   <!-- EXAMINATIONS -->
@@ -485,37 +427,25 @@
       </header>
       
       <div class="grid-4-col">
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/omr_illustration.svg" alt="Optimal Mark Recognition (OMR) illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="omr.html">Optimal Mark Recognition (OMR)</a></h3>
           <p class="card-body">Streamline examinations with high-speed scanning and intelligent data capture. Ensure precise evaluation, faster result generation, and reliable exam workflows.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
         </article>
 
-         <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/osm_illustration.svg" alt="On-Screen Marking (OSM) illustration" class="card-illustration">
-          </div>
+         <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="osm.html">On-Screen Marking (OSM)</a></h3>
           <p class="card-body">Evaluate answer scripts digitally with a secure, paperless marking system. Improve accuracy, reduce evaluation time, and ensure complete transparency throughout the assessment process.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
         </article>
 
-         <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/online_examination_illustration.svg" alt="Online Examination illustration" class="card-illustration">
-          </div>
+         <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="online-examination.html">Online Examination</a></h3>
           <p class="card-body">Conduct secure online assessments with real-time monitoring, automated workflows, and scalable infrastructure. Deliver a seamless testing experience with reliable performance and instant result processing.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
         </article>
 
-         <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/pre_post_examination_illustration.svg" alt="Pre & Post Examination illustration" class="card-illustration">
-          </div>
+         <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="pre-post-examination.html">Pre &amp; Post Examination</a></h3>
           <p class="card-body">Manage every stage of the examination lifecycle—from registration, hall tickets, and logistics to result processing, analytics, and certificate generation—with accuracy and efficiency.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
@@ -534,55 +464,37 @@
       </header>
 
       <div class="grid-3-col">
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/ocr_illustration.svg" alt="OCR illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="ocr.html">OCR</a></h3>
           <p class="card-body">Convert scanned paper documents and image-only PDFs into searchable, editable digital files with model training customized for your records.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
         </article>
 
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/icr_illustration.svg" alt="ICR illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="icr.html">ICR</a></h3>
           <p class="card-body">Extract handwritten character fields from application boxes automatically, returning confidence scores so human review is only needed when doubtful.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
         </article>
 
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/document_scanning_illustration.svg" alt="Document Scanning illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="document-scanning.html">Document Scanning</a></h3>
           <p class="card-body">Scan high volumes of files, books, and registers securely on-site or off-site to produce clean, well-indexed digital archives.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
         </article>
 
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/document_management_illustration.svg" alt="Document Management illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="document-management.html">Document Management</a></h3>
           <p class="card-body">Organize and secure corporate files with structured version history, access permissions, retention policies, and enterprise-grade full-text search.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
         </article>
 
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/printing_illustration.svg" alt="Printing illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="printing.html">Printing</a></h3>
           <p class="card-body">Produce secure, high-quality examination papers under controlled environments along with certificates, mark sheets, and variable data runs.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
         </article>
 
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/ai_exam_illustration.svg" alt="AI-driven Examination &amp; Document Solutions illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="ai-examination.html">AI-driven Examination &amp; Document Solutions</a></h3>
           <p class="card-body">Deploy task-scoped AI models for intelligent archive search, automated evaluation, and secure remote examination proctoring.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
@@ -601,46 +513,31 @@
       </header>
 
       <div class="grid-5-col">
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/custom_portals_illustration.svg" alt="Custom Portals illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="custom-portals.html">Custom Portals</a></h3>
           <p class="card-body">Build tailored web and mobile applications, candidate enrollment dashboards, and management portals designed for your exact organizational workflows.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
         </article>
 
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/platforms_illustration.svg" alt="High Performance Platforms &amp; Applications illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="high-performance-platforms.html">High Performance Platforms &amp; Applications</a></h3>
           <p class="card-body">Engineer resilient microservices and low-latency distributed systems capable of handling extreme spikes in candidate traffic and database queries.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
         </article>
 
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/cloud_devops_illustration.svg" alt="Cloud &amp; DevOps illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="cloud-devops.html">Cloud &amp; DevOps</a></h3>
           <p class="card-body">Deploy robust cloud infrastructure with Infrastructure as Code (IaC), continuous integration/deployment (CI/CD) pipelines, and real-time telemetry.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
         </article>
 
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/app_security_illustration.svg" alt="App Security Testing illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="app-security.html">App Security Testing</a></h3>
           <p class="card-body">Perform comprehensive penetration testing to uncover application vulnerabilities with reproducible proofs-of-concept and detailed remediation guides.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
         </article>
 
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/iot_illustration.svg" alt="Internet of Things (IoT) illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="internet-of-things.html">Internet of Things (IoT)</a></h3>
           <p class="card-body">Connect physical hardware with digital dashboards using smart sensor networks, real-time edge telemetry, and centralized monitoring stations.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
@@ -659,55 +556,37 @@
       </header>
 
       <div class="grid-3-col">
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/artificial_intelligence_illustration.svg" alt="Artificial Intelligence illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="artificial-intelligence.html">Artificial Intelligence</a></h3>
           <p class="card-body">Design and deploy custom machine learning algorithms and prediction models tailored to solve complex operational challenges.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
         </article>
 
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/ai_modules_illustration.svg" alt="AI Modules illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="ai-modules.html">AI Modules</a></h3>
           <p class="card-body">Integrate specialized AI assistants for automated document summarization, intelligent information retrieval, and workflow scripting.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
         </article>
 
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/agentic_ai_illustration.svg" alt="Agentic AI Voice Calls illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="agentic-ai.html">Agentic AI Voice Calls</a></h3>
           <p class="card-body">Deploy human-like conversational voice agents that handle candidate inquiries, answer FAQ questions, and route calls based on context.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
         </article>
 
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/translation_illustration.svg" alt="Translation illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="translation.html">Translation</a></h3>
           <p class="card-body">Translate complex administrative documents, test papers, and instruction sets accurately between languages while preserving original intent.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
         </article>
 
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/blockchain_identity_illustration.svg" alt="Blockchain &amp; Identity illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="blockchain-identity.html">Blockchain &amp; Identity</a></h3>
           <p class="card-body">Issue tamper-proof digital credentials, academic certificates, and secure decentralized identity verifications using blockchain technology.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
         </article>
 
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/data_analytics_illustration.svg" alt="Data Analytics illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="data-analytics.html">Data Analytics</a></h3>
           <p class="card-body">Transform raw organizational records and candidate data into interactive visualizations, performance trends, and predictive business insights.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
@@ -726,37 +605,25 @@
       </header>
 
       <div class="grid-4-col">
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/drones_uavs_illustration.svg" alt="Drones &amp; UAVs illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="drones-uavs.html">Drones &amp; UAVs</a></h3>
           <p class="card-body">Deploy autonomous aerial systems for surveillance, spatial mapping, and secure payload delivery with integrated ground control software.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
         </article>
 
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/robotics_systems_illustration.svg" alt="Robotics &amp; Systems illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="robotics-systems.html">Robotics &amp; Systems</a></h3>
           <p class="card-body">Automate repetitive labor and sorting processes with custom robotic arms, motion planning, and intelligent computer vision guidance.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
         </article>
 
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/solar_energy_illustration.svg" alt="Solar &amp; Energy illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="solar-energy.html">Solar &amp; Energy</a></h3>
           <p class="card-body">Design and integrate smart solar energy grids, monitoring power efficiency, battery storage, and institutional electrical distribution.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>
         </article>
 
-        <article class="card card-illustrated reveal">
-          <div class="card-illustration-wrap">
-            <img src="assets/images/services/tech_skilling_illustration.svg" alt="Tech Skilling illustration" class="card-illustration">
-          </div>
+        <article class="card reveal">
           <h3 class="card-title"><a class="card-link" href="tech-skilling.html">Tech Skilling</a></h3>
           <p class="card-body">Deliver curriculum planning, interactive labs, and practical training programs in cloud architecture, cyber security, and machine learning.</p>
           <span class="card-go">View service <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></span>

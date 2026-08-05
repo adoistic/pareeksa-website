@@ -31,6 +31,21 @@
 <link rel="preload" href="fonts/GeistMono-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="services.css">
+<!-- Page-specific hero style overrides -->
+<style>
+  .page-hero .hero-mark.page-hero-mark-adapted,
+  .page-hero .hero-stat-container.page-hero-stat-adapted {
+    height: 110%;
+     right: clamp(-140px, -7vw, -30px);
+    top: 54%;
+    transform: translateY(-50%);
+  }
+  .page-hero .page-hero-stat-adapted .hero-stat {
+    left: 50%;
+    top: 60%;
+  }
+</style>
+
 <script>
   (function () {
     try {
@@ -226,7 +241,7 @@
 <main id="main">
 
   <section class="page-hero">
-    <svg class="page-hero-mark" aria-hidden="true"><use href="#nib"/></svg>
+    <svg class="hero-mark page-hero-mark-adapted" aria-hidden="true"><use href="#nib"/></svg>
     <div class="wrap">
       <div class="page-hero-inner">
         <nav class="crumbs" aria-label="Breadcrumb">
@@ -247,6 +262,12 @@
           </a>
           <a class="btn btn-ghost" href="#flow"><span>How it works</span><svg class="btn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></a>
         </div>
+      </div>
+    </div>
+      <div class="wrap hero-stat-container page-hero-stat-adapted">
+      <div class="hero-stat reveal">
+        <div class="hero-stat-num">100+</div>
+        <div class="hero-stat-label">Years of<br>Combined Experience</div>
       </div>
     </div>
   </section>

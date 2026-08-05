@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 90" width="100%" height="100%">
+  <defs><style>
+    .bg-blob { fill: #EEF2FF; opacity: 0.85; }
+    .bg-blob-2 { fill: #E0E7FF; opacity: 0.6; }
+    .outline { stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .outline-thick { stroke: #16181D; stroke-width: 2.2px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .outline-thin { stroke: #16181D; stroke-width: 1px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .skin { fill: #FED7AA; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .hair { fill: #334155; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .shirt { fill: #1D4ED8; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .pants { fill: #475569; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .accent-fill { fill: #1D4ED8; }
+    .accent-stroke { stroke: #1D4ED8; stroke-width: 2px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .pastel-blue { fill: #EEF2FF; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .pastel-yellow { fill: #FEF9C3; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .pastel-green { fill: #D1FAE5; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .white-card { fill: #FFFFFF; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .shadow-line { stroke: #626875; stroke-width: 1px; stroke-linecap: round; opacity: 0.35; }
+    .sparkle { fill: #F59E0B; }
+    .plant { fill: #34D399; stroke: #16181D; stroke-width: 1.25px; }
+</style></defs>
+  <path d="M40 30 C20 15, 60 5, 100 12 C140 20, 145 45, 135 60 C125 75, 75 70, 40 60 Z" class="bg-blob-2" />
+  <line x1="20" y1="75" x2="140" y2="75" class="shadow-line" />
+  
+  <!-- File drawers cabinet -->
+  <rect x="52" y="18" width="58" height="52" rx="3" class="white-card" />
+  <line x1="81" y1="18" x2="81" y2="70" class="outline" />
+  
+  <!-- Drawer handles and labels -->
+  <rect x="60" y="28" width="12" height="3" rx="0.5" class="pants" />
+  <rect x="90" y="28" width="12" height="3" rx="0.5" class="pants" />
+  <rect x="60" y="44" width="12" height="3" rx="0.5" class="pants" />
+  <rect x="90" y="44" width="12" height="3" rx="0.5" class="pants" />
+  <rect x="60" y="60" width="12" height="3" rx="0.5" class="pants" />
+  <rect x="90" y="60" width="12" height="3" rx="0.5" class="pants" />
+
+  <!-- Character organizing files -->
+  <path d="M22 55 c0 -8 12 -8 12 0 v17 H22 Z" class="shirt" />
+  <circle cx="28" cy="45" r="5.5" class="skin" />
+  <path d="M24 43 C24 39, 32 39, 32 43 Z" class="hair" />
+  <path d="M28 55 Q43 50 48 42" fill="none" class="outline" style="stroke-width: 3; stroke:#FED7AA;" />
+  <path d="M28 55 Q43 50 48 42" fill="none" class="outline" />
+  
+  <!-- Security lock shield overlay -->
+  <path d="M122 26 s8 -2 8 8 c0 8 -8 14 -8 16 c0 0 -8 -6 -8 -16 c0 -10 8 -8 8 -8 z" class="pastel-blue" />
+  <circle cx="112" cy="34" r="7" class="outline" />
+  <line x1="117" y1="39" x2="124" y2="46" class="outline" style="stroke-width: 2.5;" />
+</svg>

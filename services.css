@@ -29,13 +29,41 @@
 .page-hero { position: relative; overflow: hidden; isolation: isolate;
   border-bottom: 1px solid var(--hairline); background: var(--surface); }
 .page-hero .wrap { padding-block: clamp(2rem, 1.2rem + 4vw, 4.5rem); }
-.page-hero-mark { position: absolute; z-index: 0; color: var(--hero-mark);
-  height: clamp(280px, 40vw, 720px); width: auto; aspect-ratio: 1152 / 1488;
-  right: clamp(-160px, -6vw, -40px); top: 50%; transform: translateY(-50%);
+/* Adapted Hero Graphic and Badge for Service/Capability Pages */
+.page-hero .hero-mark.page-hero-mark-adapted {
+  position: absolute;
+  z-index: 0;
+  color: var(--hero-mark);
+  width: auto;
+  aspect-ratio: 1152 / 1488;
   pointer-events: none;
-  -webkit-mask-image: linear-gradient(to left, #000 40%, transparent 95%);
-          mask-image: linear-gradient(to left, #000 40%, transparent 95%); }
-@media (max-width: 900px) { .page-hero-mark { display: none; } }
+  -webkit-mask-image: linear-gradient(to left, #000 45%, transparent 96%);
+  mask-image: linear-gradient(to left, #000 45%, transparent 96%);
+}
+
+.page-hero .hero-stat-container.page-hero-stat-adapted {
+  position: absolute;
+  z-index: 10;
+  width: auto;
+  aspect-ratio: 1152 / 1488;
+  padding: 0 !important; /* Remove desktop wrap padding to ensure identical coordinate space */
+  pointer-events: none;
+}
+
+/* Ensure the badge text centers exactly in the decorative logo's visual loop */
+.page-hero .page-hero-stat-adapted .hero-stat {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+/* Responsive behavior matching index.html */
+@media (max-width: 1024px) {
+  .page-hero .hero-mark.page-hero-mark-adapted,
+  .page-hero .hero-stat-container.page-hero-stat-adapted {
+    display: none !important; /* Hide both decorative elements on narrower viewports */
+  }
+}
 .page-hero-inner { position: relative; z-index: 1; max-width: 54rem; }
 .page-hero-top { display: flex; align-items: center; gap: 1rem; margin-top: 1.4rem; }
 .page-hero-ico { width: clamp(46px, 5vw, 62px); height: clamp(46px, 5vw, 62px);

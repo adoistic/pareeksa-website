@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 90" width="100%" height="100%">
+  <defs><style>
+    .bg-blob { fill: #EEF2FF; opacity: 0.85; }
+    .bg-blob-2 { fill: #E0E7FF; opacity: 0.6; }
+    .outline { stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .outline-thick { stroke: #16181D; stroke-width: 2.2px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .outline-thin { stroke: #16181D; stroke-width: 1px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .skin { fill: #FED7AA; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .hair { fill: #334155; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .shirt { fill: #1D4ED8; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .pants { fill: #475569; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .accent-fill { fill: #1D4ED8; }
+    .accent-stroke { stroke: #1D4ED8; stroke-width: 2px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .pastel-blue { fill: #EEF2FF; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .pastel-yellow { fill: #FEF9C3; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .pastel-green { fill: #D1FAE5; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .white-card { fill: #FFFFFF; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .shadow-line { stroke: #626875; stroke-width: 1px; stroke-linecap: round; opacity: 0.35; }
+    .sparkle { fill: #F59E0B; }
+    .plant { fill: #34D399; stroke: #16181D; stroke-width: 1.25px; }
+</style></defs>
+  <path d="M55 25 C35 15, 75 8, 105 15 C135 22, 145 35, 135 55 C125 75, 75 72, 55 58 Z" class="bg-blob" />
+  <line x1="20" y1="75" x2="140" y2="75" class="shadow-line" />
+  
+  <!-- Roller printer press -->
+  <circle cx="65" cy="30" r="10" class="outline" />
+  <circle cx="65" cy="30" r="3" class="outline" />
+  
+  <circle cx="95" cy="30" r="10" class="outline" />
+  <circle cx="95" cy="30" r="3" class="outline" />
+  
+  <path d="M35 30 H55 A10 10 0 0 1 75 30 A10 10 0 0 0 95 30 H125" class="accent-stroke" style="stroke-width: 2;" />
+  
+  <!-- Stacking papers booklet output -->
+  <rect x="52" y="48" width="48" height="24" rx="2" class="white-card" />
+  <line x1="58" y1="55" x2="94" y2="55" class="outline" />
+  <line x1="58" y1="61" x2="88" y2="61" class="outline-thin" />
+  <circle cx="94" cy="63" r="3.5" class="pastel-yellow" />
+
+  <!-- Operator standing beside press -->
+  <path d="M122 55 c0 -8 12 -8 12 0 v17 H122 Z" class="shirt" />
+  <circle cx="128" cy="45" r="5.5" class="skin" />
+  <path d="M124 43 C124 39, 132 39, 132 43 Z" class="hair" />
+  <path d="M122 55 Q108 50 102 44" fill="none" class="outline" style="stroke-width: 3; stroke:#FED7AA;" />
+  <path d="M122 55 Q108 50 102 44" fill="none" class="outline" />
+</svg>

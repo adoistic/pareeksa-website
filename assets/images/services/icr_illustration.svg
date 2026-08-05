@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 90" width="100%" height="100%">
+  <defs><style>
+    .bg-blob { fill: #EEF2FF; opacity: 0.85; }
+    .bg-blob-2 { fill: #E0E7FF; opacity: 0.6; }
+    .outline { stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .outline-thick { stroke: #16181D; stroke-width: 2.2px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .outline-thin { stroke: #16181D; stroke-width: 1px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .skin { fill: #FED7AA; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .hair { fill: #334155; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .shirt { fill: #1D4ED8; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .pants { fill: #475569; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .accent-fill { fill: #1D4ED8; }
+    .accent-stroke { stroke: #1D4ED8; stroke-width: 2px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .pastel-blue { fill: #EEF2FF; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .pastel-yellow { fill: #FEF9C3; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .pastel-green { fill: #D1FAE5; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .white-card { fill: #FFFFFF; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .shadow-line { stroke: #626875; stroke-width: 1px; stroke-linecap: round; opacity: 0.35; }
+    .sparkle { fill: #F59E0B; }
+    .plant { fill: #34D399; stroke: #16181D; stroke-width: 1.25px; }
+</style></defs>
+  <path d="M50 20 C25 20, 60 5, 100 12 C140 20, 135 45, 125 60 C115 75, 75 72, 50 60 Z" class="bg-blob-2" />
+  <line x1="20" y1="75" x2="140" y2="75" class="shadow-line" />
+  
+  <!-- Form Grid boxes -->
+  <rect x="30" y="24" width="16" height="16" rx="1.5" class="white-card" />
+  <text x="38" y="36" font-family="sans-serif" font-weight="bold" font-size="11" fill="#16181D" text-anchor="middle">X</text>
+  
+  <rect x="52" y="24" width="16" height="16" rx="1.5" class="white-card" />
+  <text x="60" y="36" font-family="sans-serif" font-weight="bold" font-size="11" fill="#16181D" text-anchor="middle">5</text>
+
+  <!-- Large floating digitized output card -->
+  <rect x="94" y="22" width="38" height="42" rx="3" class="white-card" stroke-dasharray="3 3" />
+  <text x="113" y="44" font-family="'Geist Mono', monospace" font-size="16" font-weight="bold" fill="#1D4ED8" text-anchor="middle">5</text>
+  <text x="113" y="55" font-family="'Geist Mono', monospace" font-size="6" fill="#626875" text-anchor="middle">CONF: 99.8%</text>
+
+  <!-- Character sitting on a giant pencil, analyzing -->
+  <path d="M58 75 v-5 c0 -4 4 -8 8 -8 h2 c4 0 8 4 8 8 v5" class="shirt" />
+  <circle cx="67" cy="54" r="5" class="skin" />
+  <path d="M63 51 C63 47, 71 47, 71 51 Z" class="hair" />
+
+  <!-- Giant Pencil -->
+  <rect x="35" y="62" width="55" height="8" rx="2" class="pastel-yellow" />
+  <path d="M90 62 L96 66 L90 70 Z" class="skin" />
+  <path d="M94 65 L96 66 L94 67 Z" class="hair" />
+</svg>

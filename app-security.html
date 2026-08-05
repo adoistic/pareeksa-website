@@ -31,6 +31,21 @@
 <link rel="preload" href="fonts/GeistMono-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="services.css">
+<!-- Page-specific hero style overrides -->
+<style>
+  .page-hero .hero-mark.page-hero-mark-adapted,
+  .page-hero .hero-stat-container.page-hero-stat-adapted {
+    height: 115%;
+     right: clamp(-160px, -7vw, -60px);
+    top: 54%;
+    transform: translateY(-50%);
+  }
+  .page-hero .page-hero-stat-adapted .hero-stat {
+    left: 50%;
+    top: 60%;
+  }
+</style>
+
 <script>
   (function () {
     try {
@@ -115,8 +130,54 @@
       <span class="lockup-word">Pareeksa</span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href="index.html#examinations">Examinations</a>
-      <a href="index.html#capabilities">Capabilities</a>
+      <div class="nav-dropdown">
+        <a href="#" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          Capabilities <span class="nav-arrow"></span>
+        </a>
+        <div class="nav-dropdown-menu nav-mega-menu">
+          <div class="nav-mega-column">
+            <h4 class="nav-mega-title">Examinations</h4>
+            <a href="omr.html">OMR Software &amp; Services</a>
+            <a href="osm.html">On-screen Marking</a>
+            <a href="online-examination.html">Online Examination</a>
+            <a href="pre-post-examination.html">Pre &amp; Post Examination</a>
+          </div>
+          <div class="nav-mega-column">
+            <h4 class="nav-mega-title">Document Intelligence</h4>
+            <a href="ocr.html">OCR</a>
+            <a href="icr.html">ICR</a>
+            <a href="document-scanning.html">Document Scanning</a>
+            <a href="document-management.html">Document Management</a>
+            <a href="printing.html">Printing</a>
+            <a href="ai-examination.html">AI-driven Examination &amp; Document Solutions</a>
+          </div>
+          <div class="nav-mega-column">
+            <h4 class="nav-mega-title">Digital Engineering</h4>
+            <a href="custom-portals.html">Custom Portals</a>
+            <a href="high-performance-platforms.html">High Performance Platforms &amp; Applications</a>
+            <a href="cloud-devops.html">Cloud &amp; DevOps</a>
+            <a href="app-security.html">App Security Testing</a>
+            <a href="internet-of-things.html">Internet of Things (IoT)</a>
+          </div>
+          <div class="nav-mega-column">
+            <h4 class="nav-mega-title">AI &amp; Intelligent Systems</h4>
+            <a href="artificial-intelligence.html">Artificial Intelligence</a>
+            <a href="ai-modules.html">AI Modules</a>
+            <a href="agentic-ai.html">Agentic AI Voice Calls</a>
+            <a href="translation.html">Translation</a>
+            <a href="blockchain-identity.html">Blockchain &amp; Identity</a>
+            <a href="data-analytics.html">Data Analytics</a>
+          </div>
+          <div class="nav-mega-column">
+            <h4 class="nav-mega-title">Emerging Technologies</h4>
+            <a href="drones-uavs.html">Drones &amp; UAVs</a>
+            <a href="robotics-systems.html">Robotics &amp; Systems</a>
+            <a href="solar-energy.html">Solar &amp; Energy</a>
+            <a href="tech-skilling.html">Tech Skilling</a>
+          </div>
+        </div>
+      </div>
+      <a href="service_layout.html">Service</a>
       <a href="index.html#contact">Contact</a>
     </nav>
     <div class="header-actions">
@@ -134,8 +195,54 @@
     </div>
   </div>
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
-    <a href="index.html#examinations">Examinations</a>
-    <a href="index.html#capabilities">Capabilities</a>
+    <div class="mobile-dropdown">
+      <button class="mobile-dropdown-trigger" type="button" aria-expanded="false">
+        Capabilities <span class="nav-arrow"></span>
+      </button>
+      <div class="mobile-dropdown-menu mobile-mega-menu">
+        <div class="mobile-mega-section">
+          <h4 class="mobile-mega-title">Examinations</h4>
+          <a href="omr.html">OMR Software &amp; Services</a>
+          <a href="osm.html">On-screen Marking</a>
+          <a href="online-examination.html">Online Examination</a>
+          <a href="pre-post-examination.html">Pre &amp; Post Examination</a>
+        </div>
+        <div class="mobile-mega-section">
+          <h4 class="mobile-mega-title">Document Intelligence</h4>
+          <a href="ocr.html">OCR</a>
+          <a href="icr.html">ICR</a>
+          <a href="document-scanning.html">Document Scanning</a>
+          <a href="document-management.html">Document Management</a>
+          <a href="printing.html">Printing</a>
+          <a href="ai-examination.html">AI-driven Examination &amp; Document Solutions</a>
+        </div>
+        <div class="mobile-mega-section">
+          <h4 class="mobile-mega-title">Digital Engineering</h4>
+          <a href="custom-portals.html">Custom Portals</a>
+          <a href="high-performance-platforms.html">High Performance Platforms &amp; Applications</a>
+          <a href="cloud-devops.html">Cloud &amp; DevOps</a>
+          <a href="app-security.html">App Security Testing</a>
+          <a href="internet-of-things.html">Internet of Things (IoT)</a>
+        </div>
+        <div class="mobile-mega-section">
+          <h4 class="mobile-mega-title">AI &amp; Intelligent Systems</h4>
+          <a href="artificial-intelligence.html">Artificial Intelligence</a>
+          <a href="ai-modules.html">AI Modules</a>
+          <a href="agentic-ai.html">Agentic AI Voice Calls</a>
+          <a href="translation.html">Translation</a>
+          <a href="blockchain-identity.html">Blockchain &amp; Identity</a>
+          <a href="data-analytics.html">Data Analytics</a>
+        </div>
+        <div class="mobile-mega-section">
+          <h4 class="mobile-mega-title">Emerging Technologies</h4>
+          <a href="drones-uavs.html">Drones &amp; UAVs</a>
+          <a href="robotics-systems.html">Robotics &amp; Systems</a>
+          <a href="solar-energy.html">Solar &amp; Energy</a>
+          <a href="tech-skilling.html">Tech Skilling</a>
+        </div>
+      </div>
+    </div>
+    <a href="service_layout.html">Service</a>
     <a href="index.html#contact">Contact</a>
     <a class="mobile-cta" href="https://wa.me/919999026602" target="_blank" rel="noopener">Message on WhatsApp</a>
   </nav>
@@ -144,7 +251,7 @@
 <main id="main">
 
   <section class="page-hero">
-    <svg class="page-hero-mark" aria-hidden="true"><use href="#nib"/></svg>
+    <svg class="hero-mark page-hero-mark-adapted" aria-hidden="true"><use href="#nib"/></svg>
     <div class="wrap">
       <div class="page-hero-inner">
         <nav class="crumbs" aria-label="Breadcrumb">
@@ -165,6 +272,12 @@
           </a>
           <a class="btn btn-ghost" href="#flow"><span>How it works</span><svg class="btn-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#arrow"/></svg></a>
         </div>
+      </div>
+    </div>
+      <div class="wrap hero-stat-container page-hero-stat-adapted">
+      <div class="hero-stat reveal">
+        <div class="hero-stat-num">100+</div>
+        <div class="hero-stat-label">Years of<br>Combined Experience</div>
       </div>
     </div>
   </section>
@@ -355,11 +468,25 @@
         <span class="lockup-word">Pareeksa</span>
       </a>
       <p class="footer-tag mono">The exam, examined.</p>
+      <div class="footer-creds">
+    <span class="footer-creds-label">Registered<br>With</span>
+
+    <span class="cred">
+        <img src="assets/badges/gem.png"
+             alt="Registered on GeM">
+    </span>
+
+    <span class="cred">
+        <img src="Importance-1-e1536998812445.png"
+             alt="MSME Registered">
+    </span>
+</div>
     </div>
     <nav class="footer-nav" aria-label="Footer">
       <h2 class="footer-h">Site</h2>
       <a href="index.html#examinations">Examinations</a>
       <a href="index.html#capabilities">Capabilities</a>
+      <a href="service_layout.html">Service</a>
       <a href="index.html#contact">Contact</a>
       <a href="brand.html">Brand</a>
     </nav>
@@ -370,18 +497,71 @@
       <address class="footer-address">New Delhi – 110059, India</address>
     </div>
   </div>
-  <div class="wrap footer-creds">
-    <span class="footer-creds-label">Registered with</span>
-    <span class="cred"><img src="assets/badges/gem.png" width="273" height="178" alt="Registered on GeM — Government e-Marketplace" loading="lazy"></span>
-    <span class="cred"><img src="assets/badges/msme.svg" width="394" height="394" alt="MSME registered — Micro, Small &amp; Medium Enterprises" loading="lazy"></span>
-  </div>
+  
   <div class="wrap footer-base">
     <p>© <span id="year">2026</span> Pareeksa Technologies</p>
     <p class="mono footer-gst">GST 07ECOPS6433P1ZL</p>
   </div>
 </footer>
+<button type="button" class="demo-float" aria-label="Request a demo">
+  <span>Request a Demo</span>
+</button>
 <a class="wa-float" href="https://wa.me/919999026602" target="_blank" rel="noopener" aria-label="Message Pareeksa on WhatsApp" title="Message us on WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>
 </a>
+
+<!-- Demo Modal -->
+<div id="demo-modal" class="modal" aria-hidden="true">
+  <div class="modal__overlay" tabindex="-1"></div>
+  <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button type="button" class="modal__close" aria-label="Close modal">&times;</button>
+    <div class="modal__content">
+      <h2 id="modal-title" class="modal__title">Request a Demo</h2>
+      <p class="modal__lead">Fill out the details below, and we will get back to you to schedule a live demo.</p>
+      
+      <form class="contact-form modal-form" action="https://api.web3forms.com/submit" method="POST" aria-label="Request a demo form">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        <div class="contact-form__row">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="modal-name">Name</label>
+            <input class="contact-form__input" type="text" id="modal-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="modal-phone">Mobile Number</label>
+            <input class="contact-form__input" type="tel" id="modal-phone" name="phone" placeholder="+91 " required>
+          </div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="modal-email">Email Address</label>
+            <input class="contact-form__input" type="email" id="modal-email" name="email" placeholder="your.email@example.com" required>
+          </div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="modal-org">Institute / Organization Name</label>
+            <input class="contact-form__input" type="text" id="modal-org" name="organization" placeholder="Your institute or organization">
+          </div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="modal-message">Message</label>
+            <textarea class="contact-form__textarea" id="modal-message" name="message" rows="4" placeholder="How can we help?"></textarea>
+          </div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <div class="contact-form__alert contact-form__alert--success" hidden></div>
+          <div class="contact-form__alert contact-form__alert--error" hidden></div>
+        </div>
+        <div class="contact-form__row contact-form__row--single">
+          <button type="submit" class="btn btn-primary contact-form__submit">
+            <span>Request a Demo</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 90" width="100%" height="100%">
+  <defs><style>
+    .bg-blob { fill: #EEF2FF; opacity: 0.85; }
+    .bg-blob-2 { fill: #E0E7FF; opacity: 0.6; }
+    .outline { stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .outline-thick { stroke: #16181D; stroke-width: 2.2px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .outline-thin { stroke: #16181D; stroke-width: 1px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .skin { fill: #FED7AA; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .hair { fill: #334155; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .shirt { fill: #1D4ED8; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .pants { fill: #475569; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .accent-fill { fill: #1D4ED8; }
+    .accent-stroke { stroke: #1D4ED8; stroke-width: 2px; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .pastel-blue { fill: #EEF2FF; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .pastel-yellow { fill: #FEF9C3; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .pastel-green { fill: #D1FAE5; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .white-card { fill: #FFFFFF; stroke: #16181D; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+    .shadow-line { stroke: #626875; stroke-width: 1px; stroke-linecap: round; opacity: 0.35; }
+    .sparkle { fill: #F59E0B; }
+    .plant { fill: #34D399; stroke: #16181D; stroke-width: 1.25px; }
+</style></defs>
+  <path d="M40 30 C20 15, 60 5, 100 12 C140 20, 145 45, 135 60 C125 75, 75 70, 40 60 Z" class="bg-blob-2" />
+  <line x1="20" y1="75" x2="140" y2="75" class="shadow-line" />
+  
+  <!-- Candidate under scanner proctor -->
+  <path d="M68 75 v-8 c0 -6 5 -11 11 -11 h4 c6 0 11 5 11 11 v8" class="shirt" />
+  <circle cx="80" cy="48" r="6" class="skin" />
+  <path d="M75 45 C75 41, 85 41, 85 45 Z" class="hair" />
+  
+  <path d="M66 32 h28 v28 H66 Z" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-dasharray="3 2" />
+  
+  <!-- Scanning corners -->
+  <path d="M62 36 V28 H70" class="accent-stroke" />
+  <path d="M98 36 V28 H90" class="accent-stroke" />
+  <path d="M62 52 V60 H70" class="accent-stroke" />
+  <path d="M98 52 V60 H90" class="accent-stroke" />
+
+  <!-- Floating neural AI nodes -->
+  <circle cx="36" cy="30" r="4.5" class="pastel-blue" />
+  <circle cx="124" cy="30" r="4.5" class="pastel-blue" />
+  <line x1="40" y1="32" x2="66" y2="40" class="outline-thin" opacity="0.4" />
+  <line x1="120" y1="32" x2="94" y2="40" class="outline-thin" opacity="0.4" />
+
+  <!-- AI sparkles -->
+  <path d="M125 46 l1.5 2.5 l2.5 1.5 l-2.5 1.5 l-1.5 2.5 l-1.5 -2.5 l-2.5 -1.5 l2.5 -1.5 z" class="sparkle" />
+</svg>

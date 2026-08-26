@@ -314,3 +314,282 @@
   display: flex; align-items: center; gap: .5rem; font-family: "Geist Mono", monospace;
   letter-spacing: .01em; }
 .pipeline-note .i8 { width: 16px; height: 16px; color: var(--accent); }
+
+/* ============================================================
+   SERVICE ILLUSTRATION CARDS
+   service_layout.html only — does not affect index.html.
+
+   Architecture:
+     Shared base  →  .svc-illus-card / .svc-card-img / .svc-card-content
+     Per-category →  #examinations, #document-intelligence,
+                     #digital-engineering, #ai-intelligent-systems,
+                     #emerging-technologies
+   Each category is independently adjustable via CSS custom properties.
+   ============================================================ */
+
+
+/* ============================================================
+   SHARED BASE — common structure for all illustrated cards
+   ============================================================ */
+
+/* Extends .card with image-on-top flex column layout.
+   padding: 0 removes the .card base padding so the image
+   can sit flush at the top of the card with no gap.        */
+.svc-illus-card {
+  padding: 0 !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform .3s var(--ease),
+    box-shadow .3s var(--ease),
+    border-color .3s var(--ease);
+}
+
+/* Image container — upper portion of the card.
+   Height is driven by the per-category --svc-img-height variable.
+   Light-mode background blends naturally with white/near-white
+   illustration backgrounds.                                  */
+.svc-card-img {
+    flex: none;
+    width: 100%;
+    height: var(--svc-img-height, 200px);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #F2F3F6;
+    border-bottom: 1px solid var(--hairline);
+    transition: background-color .3s var(--ease);
+}
+
+.svc-card-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .35s var(--ease);
+}
+
+/* Content section — fills remaining card height so CTA stays at bottom. */
+.svc-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--svc-content-padding, 1.4rem 1.5rem 1.6rem);
+}
+
+/* Title — tighter top margin, controlled spacing below */
+.svc-card-content .card-title {
+  margin-top: 0;
+  margin-bottom: .6rem;
+  font-size: var(--fs-h4);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+/* Description — readable, comfortable line height */
+.svc-card-content .card-body {
+  flex: 1;               /* grows to push CTA to bottom */
+  color: var(--muted);
+  font-size: var(--fs-small);
+  line-height: 1.65;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* CTA — always at the bottom regardless of description length */
+.svc-card-content .card-go {
+  margin-top: 1.1rem;
+  padding-top: 0;
+  font-family: "Geist Mono", monospace;
+  font-size: var(--fs-caption);
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  letter-spacing: .02em;
+}
+
+/* Hover — subtle elevation, accent border, image micro-zoom */
+.svc-illus-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-hover-shadow);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--hairline));
+}
+
+.svc-illus-card:hover .svc-card-img img {
+  transform: scale(1.03);
+}
+
+/* Dark mode — neutral dark tint in image container so white-background
+   JPGs don't look like harsh white boxes on a dark card.               */
+[data-theme="dark"] .svc-card-img {
+  background: #1C1E25;
+  border-bottom-color: var(--hairline);
+}
+
+/* section-alt context (Document Intelligence, AI sections) */
+.section-alt .svc-illus-card {
+  background: var(--bg);
+}
+
+
+/* ============================================================
+   EXAMINATIONS  (#examinations)
+   4 cards — 4 columns on desktop, 2 on tablet, 1 on mobile.
+   Illustrations: OMR sheet, OSM screen, online exam, pre/post.
+   ============================================================ */
+
+#examinations {
+  --svc-img-height:    200px;
+  --svc-img-padding:  1rem 1.5rem;
+  --svc-content-padding: 1.35rem 1.5rem 1.55rem;
+  --svc-card-gap:     clamp(1rem, 0.8rem + 1.2vw, 1.6rem);
+}
+
+/* Override grid-4-col to give a genuine 4-column layout on large screens */
+#examinations .grid-4-col {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--svc-card-gap);
+}
+
+
+/* ============================================================
+   DOCUMENT INTELLIGENCE  (#document-intelligence)
+   6 cards — 3+3 on desktop, 2 on tablet, 1 on mobile.
+   Illustrations: document/paper compositions — slightly taller.
+   ============================================================ */
+
+#document-intelligence {
+  --svc-img-height:    210px;
+  --svc-img-padding:  1rem 1.5rem;
+  --svc-content-padding: 1.35rem 1.5rem 1.55rem;
+  --svc-card-gap:     clamp(1rem, 0.8rem + 1.2vw, 1.6rem);
+}
+
+#document-intelligence .grid-3-col {
+  gap: var(--svc-card-gap);
+}
+
+
+/* ============================================================
+   DIGITAL ENGINEERING  (#digital-engineering)
+   5 cards — 3+2 centered on desktop, 2 on tablet, 1 on mobile.
+   The last row of 2 is visually centered rather than left-aligned.
+   ============================================================ */
+
+#digital-engineering {
+  --svc-img-height:    195px;
+  --svc-img-padding:  1rem 1.4rem;
+  --svc-content-padding: 1.3rem 1.5rem 1.5rem;
+  --svc-card-gap:     clamp(1rem, 0.8rem + 1.2vw, 1.6rem);
+}
+
+/* 3-column grid — the 5th card wraps naturally.
+   justify-content: center centres the incomplete 2nd row.   */
+#digital-engineering .grid-5-col {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-content: center;
+  gap: var(--svc-card-gap);
+}
+
+
+/* ============================================================
+   AI & INTELLIGENT SYSTEMS  (#ai-intelligent-systems)
+   6 cards (all now illustrated) — 3+3 on desktop.
+   ============================================================ */
+
+#ai-intelligent-systems {
+  --svc-img-height:    195px;
+  --svc-img-padding:  1rem 1.5rem;
+  --svc-content-padding: 1.35rem 1.5rem 1.55rem;
+  --svc-card-gap:     clamp(1rem, 0.8rem + 1.2vw, 1.6rem);
+}
+
+#ai-intelligent-systems .grid-3-col {
+  gap: var(--svc-card-gap);
+}
+
+
+/* ============================================================
+   EMERGING TECHNOLOGIES  (#emerging-technologies)
+   4 cards (2 illustrated, 2 plain) — 4 cols desktop, 2 tablet.
+   ============================================================ */
+
+#emerging-technologies {
+  --svc-img-height:    190px;
+  --svc-img-padding:  1rem 1.4rem;
+  --svc-content-padding: 1.3rem 1.5rem 1.5rem;
+  --svc-card-gap:     clamp(1rem, 0.8rem + 1.2vw, 1.6rem);
+}
+
+/* Genuine 4-column layout on large screens */
+#emerging-technologies .grid-4-col {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--svc-card-gap);
+}
+
+/* Plain cards in Emerging Tech should match illustrated card height
+   so that the 2 illustrated + 2 plain cards look like a cohesive row */
+#emerging-technologies .card:not(.svc-illus-card) {
+  padding: var(--svc-content-padding);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Tablet — collapse everything to 2 columns */
+@media (max-width: 960px) {
+  #examinations .grid-4-col,
+  #emerging-technologies .grid-4-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #digital-engineering .grid-5-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Scale back image heights proportionally */
+  #examinations          { --svc-img-height: 185px; }
+  #document-intelligence { --svc-img-height: 190px; }
+  #digital-engineering   { --svc-img-height: 175px; }
+  #ai-intelligent-systems { --svc-img-height: 180px; }
+  #emerging-technologies  { --svc-img-height: 170px; }
+}
+
+/* Mobile — single column */
+@media (max-width: 600px) {
+  #examinations .grid-4-col,
+  #emerging-technologies .grid-4-col,
+  #digital-engineering .grid-5-col {
+    grid-template-columns: 1fr;
+  }
+
+  /* On mobile, a slightly taller image area works because the card
+     is full-width and there's plenty of horizontal room.           */
+  #examinations,
+  #document-intelligence,
+  #digital-engineering,
+  #ai-intelligent-systems,
+  #emerging-technologies {
+    --svc-img-height: 210px;
+    --svc-content-padding: 1.1rem 1.25rem 1.3rem;
+  }
+}
+
+/* Reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .svc-illus-card {
+    transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
+  }
+  .svc-illus-card:hover { transform: none; }
+  .svc-illus-card:hover .svc-card-img img { transform: none; }
+}
+
+

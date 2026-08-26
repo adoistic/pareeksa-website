@@ -364,6 +364,8 @@
     transition: background-color .3s var(--ease);
 }
 
+
+
 .svc-card-img img {
     display: block;
     width: 100%;

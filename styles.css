@@ -688,7 +688,10 @@ a { color: inherit; text-decoration: none; }
     top: auto;
     transform: none;
     height: auto;
-    width: auto;
+    /* Restore the .wrap gutter. .wrap sets its inset via width, not padding,
+       so width:auto here made the block full-bleed and .hero's overflow-x
+       clipped the first glyph of the number. */
+    width: min(100% - (var(--gutter) * 2), var(--maxw));
     aspect-ratio: auto;
     margin-top: 3.5rem;
   }
